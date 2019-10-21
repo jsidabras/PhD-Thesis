@@ -1,0 +1,416 @@
+\chapter[Theory and Experimental Methods]{Theory and Experimental Methods}
+\section{EPR spectroscopy}
+In this section, the underlying theoretical and practical principles of the EPR experiment will be discussed as it relates to the experiments performed in this work. 
+
+\subsection{Spin Hamiltonian}
+The complete Hamiltonian $\mathcal{H}_0$ of a molecular system is very complex. All of the space and spin coordinates of electrons and nuclei would be included in the complete Hamiltonian, such that,
+\begin{equation}
+    \mathcal{H}_0 \ket{\Psi} = {\mathbf E} \ket{\Psi}
+\end{equation}
+where the wave function $\ket{\Psi}$ describes how the molecular system is propagated over time, known as the time-dependant Schr\"{o}dinger equation. Since EPR measures the time-invariant ground states, it is sufficient to describe only the interactions of the molecular system contained in the Hamiltonian. The energy states ${\mathbf E}$ are further simplified by the phenomenologically derived spin Hamiltonian operator $\hat{\mathcal{H}}$ and the time-dependant Schr\"{o}dinger equation is simplified to only the spin states of the system. \cite{SpinDyn,abragam1961} The spin Hamiltonian comprises of the superposition of the magnetic and electric properties of the molecular system, such that,
+\begin{equation}
+    \hat{\mathcal{H}} = \hat{\mathcal{H}}_{ze} + \hat{\mathcal{H}}_{hfi} + \hat{\mathcal{H}}_{nz} + \hat{\mathcal{H}}_{nqi} + \hat{\mathcal{H}}_{zfs},
+\end{equation}
+where the electron Zeeman interaction $\hat{\mathcal{H}}_{ze}$, the hyperfine interaction $\hat{\mathcal{H}}_{hf}$, the nuclear Zeeman interaction $\hat{\mathcal{H}}_{nz}$, and, for nuclei with $I > 1/2$, the nuclear quadrupole interactions $\hat{\mathcal{H}}_{nqi}$. The zero-field splitting term $ \hat{\mathcal{H}}_{zfs}$, which is characterized by an electron-spin magnetization without applied magnetic field for an electron with a total $S > 1/2$.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\textwidth]{Kapitel/Ch2-Images/EnergyDiagram.eps}
+ \caption[Energy diagram example with S=1/2 and I=1.]{Energy diagram example of a spin system with $S=1/2$, $I=1$, and first-order quadrupole interactions. The transitions $\mathbf{a}$, $\mathbf{b}$, and $\mathbf{c}$ are EPR transitions. The nuclear hyperfine-interaction transitions are marked as $\mathbf{d}$, $\mathbf{e}$, $\mathbf{f}$, and $\mathbf{g}$. The transitions shown as dashed lines are semi-forbidden ``double quantum'' $\Delta M_I = \pm 2$ transitions and marked in red as marked as $\mathbf{h}$ and $\mathbf{i}$. Modified with permission from Fig.~2 of Ref.~[2.\kern-0.4em\citenum{CUTSAIL20151370}].}
+ \label{fig:EPREnergy}
+\end{figure}
+
+In this formulation we assume the static magnetic field $\mathbf{B}_0$ is along the $z$ axis and denote the transpose of a tensor with a `T'. In this work is assumed that the electron Zeeman interaction is the largest interaction followed by the hyperfine interaction, nuclear Zeeman, electric quadrupole, and zero-field splitting.
+
+\subsubsection*{Zeeman interactions}
+When a magnetic field is applied to a molecular system with angular momentum, the angular momentum aligns with the static magnetic field in such a way that a Boltzmann distribution is formed. This removes the degeneracy of the $M_s$ manifold, splitting the energy levels, illustrated in Fig.~\ref{fig:EPREnergy} as the initial splitting. For an electron spin of $S = 1/2$, the initial energy levels are split into $\mathbf{M}_s = \ket{+\frac{1}{2}}, \ket{-\frac{1}{2}}$ for spin-up and spin-down, respectively. Both the electron $\hat{\mathcal{H}}_{ze}$ and nuclear $\hat{\mathcal{H}}_{nz}$ Zeeman interactions occur in when a static magnetic field $\mathbf{B}_z$ is applied.
+
+The electron Zeeman interaction is defined by
+\begin{equation*}
+    \hat{\mathcal{H}}_{ze} = \beta_e \mathbf{B}^\text{T}_z  \cdot \mathbf{g} \cdot \mathbf{S}/\hbar
+\end{equation*}
+where $\beta_e$ is the Bohr magneton, the transpose of the static magnetic field $\mathbf{B}_z^{\text{T}}$, the tensor $\mathbf{S} = [\mathbf{S}_x \; \mathbf{S}_y \; \mathbf{S}_z]$ is the spin angular momentum of the electron. The tensor $\mathbf{g}$ is what is known as the $g$-tensor and is spacial distribution of the angular momentum of the electron. The $g$-tensor is typically made diagonal and discussed in terms of the $g_x$, $g_y$, and $g_z$ components, where the magnitude is denoted as $g_{iso}$. 
+
+For a free-electron in space, 
+\begin{equation}
+    \nu = \gamma |\mathbf{B}_0|
+\end{equation}
+where the gyromagnetic ratio $\gamma$ of the free-electron is approximately 2.8~MHz/G. This results in the energy to be absorbed, for some common microwave frequencies, at 350~mT for X-band (9.8~GHz) and 1250~mT at Q-band (35~GHz). All deviations from the $g_{iso}$ of a free-electron can be used to obtain information on the local environment. 
+
+For systems with intrinsic or surrounding nuclei with a nuclear spin $I_k$, the Nuclear Zeeman effect is defined by
+\begin{equation*}
+    \hat{\mathcal{H}}_{nz} = - \beta_n \sum_{k=1}^m g_{n,k} \mathbf{B}^\text{T}_z  \cdot \mathbf{I}_k/\hbar
+\end{equation*}
+where $\beta_n$ is the nuclear magneton, the transpose of the static magnetic field $\mathbf{B}_z$ is marked with a `T', the tensor $\mathbf{I}_k = [\mathbf{I}_x \; \mathbf{I}_y \; \mathbf{I}_z]$ is the spin angular momentum of the nuclei. The summation of the nuclear contributions are represented by the index $k$ for each $m$ nucleus that interacts with the electron. Each nucleus has a distinct $g_{n,k}$ value and angular momentum $\mathbf{I}_k$ and is assumed to be isotropic. The visualization of the nuclear Zeeman is illustrated as a perturbation on the electron-nuclear hyperfine interaction shown in Fig.~\ref{fig:EPREnergy}.
+
+\subsubsection*{Zero-field Splitting}
+For electron with spin greater than 1/2 ($S > 1/2$) there exists an internal interaction that the energy levels of the ground state with no applied external field. This interaction, named zero-field splitting, 
+\begin{equation}
+    \hat{\mathcal{H}}_{zfs} = \mathbf{S}^{\text{T} } \cdot \mathbf{D} \cdot \mathbf{S}
+\end{equation}
+where the zero-field splitting tensor $\mathbf{D}$ is a symmetric interaction from close spin-orbital coupling between two or more electrons. The zero-field splitting is especially important in molecular magnets, where it is the direct characterization of the magnetization caused by the interactions of electrons as magnetic monopoles. \cite{barra1998high} With very large values of $D_{iso}$, the EPR spectra become obtainable only with high-field--high-frequency EPR methods. \cite{Nehrkorn13} 
+
+This can be likened to the nuclear quadrupole interaction for nuclei with $I > 1/2$.
+
+\subsubsection*{Nuclear-Electron interactions}
+Since EPR is the measurement of how a valence electron interacts with the surrounding environment, information on the surrounding nuclei is possible if these nuclei have an inherent nuclear spin $\mathbf{I}$. Such nuclei include, for example, $^1$H, $^2$H, $^14$N, $^15$N, $^57$Fe, and $^13$C, which can be synthetically incorporated into the system to gain more information than the natural abundance of some of the atoms. \cite{Doorslaer2007,Harmer2009,CUTSAIL20151370}
+
+\paragraph*{Hyperfine interactions}
+The hyperfine interactions are defined as the coupling between the paramagnetic site and the surrounding nuclei. This can be broken up into two distinct parts, the isotropic Fermi contact interaction, $a_{iso}$, and the electron-nucleus magnetic dipole-dipole coupling. The hyperfine interactions can be expressed as
+\begin{equation}
+    \hat{\mathcal{H}}_{hfi} = \mathbf{S}^{\text{T}} \cdot \mathbf{A} \cdot \mathbf{I}_k = a_{iso}\mathbf{S}^{\text{T}} \cdot \mathbf{I}_k + \mathbf{S}^{\text{T}} \cdot \mathbf{T} \cdot \mathbf{I}_k \label{eq-2:hfi}
+\end{equation}
+for each the interacting nuclei $k$, there exists such an interaction. The Fermi contact describes the delocalization of the electron to the surrounding nuclei. At a sufficient distance, the spacial tensor $\mathbf{T}$ can be described by
+\begin{equation}
+    \mathbf{T} = \frac{\mu_0}{4 \pi \hbar}\frac{1}{r^3} g_n \beta_n \beta_e g_i (3r_i r_j - \delta_{ij}) \qquad (i,j = x,y,z), \label{eq-2:hfiT}
+\end{equation}
+where the $x$, $y$, and $z$-components of the hyperfine tensor are treated independently. Illustrated in Fig.~\ref{fig:EPREnergy} is the nuclear-electron hyperfine interaction assuming only the isotropic component of interaction. In frozen solution, this isotropic component is ``smeared'' by the distribution of the frequency components defined by $\mathbf{T}$. Only single-crystal EPR spectroscopy can truly obtain the full hyperfine-tensor information for systems with anisotropic hyperfine interactions $\mathbf{A}$.
+
+\paragraph*{Nuclear quadrupole interactions}
+The nuclear quadrupole interactions only exist for nuclei with a spin $I$ greater than 1/2 and is caused by electric field gradients due to an electron with an anisotropic profile that interacts with the surrounding nuclei. One can learn about the nature of the chemical bonding and the delocalization of the electron if the quadrupole moment $Q$ is known. 
+
+The nuclear quadrupole interactions is described by the matrix operator
+\begin{equation}
+    \hat{\mathcal{H}}_{nqi} = \mathbf{\hat{I}}^\text{T} \cdot \mathbf{P} \cdot \mathbf{\hat{I}} \label{eq-2:nqi}
+\end{equation}
+where
+\begin{equation}
+    \mathbf{P} = P_{||}   \begin{bmatrix}
+   \eta_Q -1 & 0 & 0\\
+     & \eta_Q -1 & 0\\
+    &   & 2\\
+   \end{bmatrix}
+\end{equation}
+and the value 
+\begin{equation}
+    P_{||} = \frac{3 e Q}{4I(2I-1)}\frac{\partial^2 V}{\partial z^2} = \frac{3 P_z}{2}
+\end{equation}
+where $\frac{\partial^2 V}{\partial z^2}$ is the electric-field gradient seen by the nucleus and $|e|Q$ describes the electric shape of the nucleus and is directly determined by the type of nucleus and, here, $\eta$ is defined as the rhombicity of the electric gradient calculated by $(Px-Py)/P_z$ when $|P_z|\geq |P_y|\geq |P_x|$. \cite{abragam2012electron,weil2007electron} Some common values of $Q$ are 0.00286 for $^2$H, 0.02001 for $^{14}$N in units of 10$^{-24}$ cm$^2$. The final EPR spectrum is a combination of all of these effects yielding a change in the Boltzmann population at the magnetic field positions illustrated in Fig.~\ref{fig:EPREnergy} as arrows marked $\mathbf{a}$, $\mathbf{b}$, and $\mathbf{c}$.
+
+The hyperfine interactions that are measured with some double-resonance experiments are indicated in Fig.~\ref{fig:EPREnergy} as the arrows marked $\mathbf{d}$, $\mathbf{e}$, $\mathbf{f}$, and $\mathbf{g}$. However, when performing hyperfine spectroscopy on $^{14}$N nuclei we need to understand the semi-forbidden ``double quantum'' (DQ) cross peaks. In Fig.~\ref{fig:EPREnergy}, these transitions are shown as dashed lines and marked in red as $\mathbf{h}$ and $\mathbf{i}$. The DQ transitions are a second order effect on the nuclear quadrupole interactions and can be calculated by
+\begin{equation}
+\nu^{DQ}_{\alpha, \beta} = 2 \sqrt{\bigg(\nu_I \pm \frac{a}{2}\bigg)^2+\bigg(\frac{e^2 q Q}{4 h}\bigg)(3+\eta)}, \label{eq-2:doubleQ}
+\end{equation}
+where $a$ is the hyperfine coupling at the nuclei of interest. \cite{Doorslaer2007} This splitting further complicates the interpretation of the data. However, when used in single crystals the double-quantum cross peaks can be used to assign nuclei throughout the rotation. These double-quantum cross peaks are indicated in Fig.~\ref{fig:EPREnergy} by the dashed lines and red markers labeled $h$ and $i$.
+
+\newpage
+\subsection{Measurement of EPR Spectra}
+The EPR experiments performed in this work are as follows:
+
+\subsubsection*{Continuous-wave EPR.}
+The continuous-wave (CW) EPR experiment measures the sample using a constant microwave power incident on the sample and slowly sweeping a quasi-static magnetic field $B_0$ through the resonance condition, $\nu =\gamma B_0$. Where $\nu$ is the operating frequency and $\gamma$ the the gyromagnetic ratio of the spin system ($\gamma = 2.8$~MHz/G for a free electron).  
+
+The incident magnetic field energy is absorbed by the sample as the energy approaches that of the resonance condition. A schematic of these energies are depicted in the top-right inset of Fig.~\ref{fig:EPREnergy}. At the macro-scale view, the absorption of the microwaves come from a change in the permeability of the sample, such that, 
+\begin{equation}
+    \mu_r(\omega) = \mu_0 (1+M) = \mu_0 (1+ 4 \pi \eta \chi(\omega)), \label{eq-2:permea}
+\end{equation} 
+where $\eta$ is the filling factor from Eqn.~\ref{eq-2:filling} which describes the flux-linkage efficiency between the applied microwave magnetic field and the sample and $\chi(\omega)$ is the complex time-dependant magnetic susceptibility. For a simple Lorenzian-shaped spectrum, the magnetic susceptibility is defined as 
+\begin{equation}
+      \chi(\omega) = \frac{(\omega_0 - \omega) T_1 }{1+(\omega_0 - \omega)T_2^2+\gamma^2 H_{1r} T_1 T_2}- i \frac{1}{1+(\omega_0 - \omega)T_2^2+\gamma^2 H_{1r} T_1 T_2}, \label{eq-2:chi}
+\end{equation}
+where $T_1$ and $T_2$ are the spin-spin and spin-lattice relaxation times, respectively, $\omega_0$ is the frequency of resonance as $\omega$ is swept, $H_{1r}$ is the microwave magnetic field perpendicular to $\vectu{B}{0}$ (Eqn.~\ref{circpoleH} and $\gamma$ is the gyromagnetic ratio of the electron. \cite{abragam1961}
+
+We assume a simple lumped-circuit resonance consisting of an inductor $L_R$ (which contains the sample) in series with a resistance $R_R$ in parallel with a capacitance $C_R$. The capacitor is chosen so the tank circuit resonates at the frequency $\omega_R^2 L_R C_R = 1$. We assume the detector is placed across the capacitor, measuring the voltage. 
+
+The inductance can be described by
+\begin{equation}
+    L_R = \mu_r L_0 = \mu_0 (1 + M)L_0 = \mu_0 (1 + 4 \pi \eta \chi)L_0,
+\end{equation}
+where the permeability of the sample consists of the freespace $\mu_0$ and $4\pi\chi$ is the magnetic susceptibility $M$, modified by the filling factor $\eta$. \cite{ramo1984fields} Although $\chi$ is a function of the incident microwave frequency $\chi(\omega)$, it is omitted for brevity. The resonant tank-circuit resistance and inductance can be further simplified such that
+\begin{equation}
+    R_R + i \omega L_R = (R_R + 4\pi \omega L_0 \eta \chi'') + i (1+4\pi\eta\chi')\omega L_0
+\end{equation}
+where $\omega$ is the frequency of operation and resonance occurs in the neighborhood of $(\omega_0-\omega)$. \cite{schumacher1970introduction} The change in magnetic permeability within a resonator is small compared to the microwave inductance and causes only a perturbation in the operating frequency (dispersion; $\chi'$) and losses (absorption; $\chi''$). The resonator impedance is matched to the bridge, called ``critical coupling'', where the phase of the incoming standing-wave voltage cancels the outgoing reflections. At critical coupling, no voltage is detected at the diode. However, as the resonator approaches microwave resonance, the change in the tank-circuit resistance is directly measured in the reflection coefficient. 
+
+In the CW experiment the static magnetic field field is modulated by $B_0 + B_m Cos[\omega t]$, typically at 100~kHz, and is collected using a phase-sensitive detector. \cite{weil2007electron} If the modulation is small, the signal is derivative-like. \cite{Hyde1990pseudo} As the modulation amplitude $B_m$ is increased, the signal increases proportionally until the modulation amplitude approaches the intrinsic line-width of the sample where a broadening occurs. Choosing between signal and signal purity is known as the line-height--line-width compromise and is discussed in Ref.~[2.\kern-0.4em\citenum{eaton2010quantitative}]. 
+
+The modulated reflection coefficient changes are recorded on a detector diode connected to the phase-sensitive detector. When the frequency is held constant, as is typically done with an automatic frequency control (AFC), an absorption spectrum is obtained. \cite{poole1967electron} A dispersion signal can be obtained by the frequency control feedback voltage or directly detected by a quadrature microwave channel. Continuous-wave is the standard EPR experiment. 
+
+\subsubsection*{Non-adiabatic and Adiabatic Rapid Scan.}
+With modern digital signal processing and fast analog-to-digital converters, the CW experiment has recently been improved upon. The non-adiabatic rapid scan (NARS) \cite{KITTELL2011228, KITTELL201251, KITTELL201568, Hyde2013MDIFF, YU201558} and adiabatic rapid scan (RS) \cite{JOSHI200544,TSEITLIN200948, MITCHELL2012221, RScompare,MOSER2017} methods collect real and imaginary EPR spectra (pure-absorption and pure-dispersion) using fast magnetic field ($\mathbf{B}_0 + \mathbf{B}_m $) or microwave frequency sweeps without the need for a phase-sensitive detector. Both rapid scan methods produce data that can be post-processed with pseudo-modulation to compare to the conventional first-derivative EPR spectrum using a moving difference (MDIFF) pseudo-modulation. \cite{Hyde2013MDIFF} The non-adiabatic rapid scan (NARS) experiment uses a field sweep fast enough to overcome $1/f$ noise but remain in a thermal equilibrium, while adiabatic rapid scan sweeps the field fast enough to cause passage. \cite{Weger1960} 
+
+Specifically, the rapid passage regime satisfies the equation
+\begin{equation}
+    \frac{|\mathbf{H}_{1r}|}{d H_0/dt} \ll \sqrt{T_1 T_2}
+\end{equation}
+where the ratio of the magnitude microwave magnetic field $\mathbf{H}_{1r}$, as previously defined in Eqn.~\ref{circpoleH}, and the change in static magnetic field $H_0$ must be much less than the product of the spin-lattice relaxation time $T_1$ and spin-spin relaxation time $T_2$. The adiabatic regime is defined as 
+\begin{equation}
+    \gamma |\mathbf{H}_{1r}|^2 \gg \frac{d H_0}{dt},
+\end{equation}
+where $\gamma$ is the the gyromagnetic ratio in MHz/G. Conversely, the non-adiabatic regime is defined as
+\begin{equation}
+    \gamma |\mathbf{H}_{1r}|^2 \ll \frac{d H_0}{dt}.
+\end{equation}
+These conditions produce passage. \cite{Weger1960}
+
+The advantage of non-adiabatic rapid scan is the signal-to-noise improvement of collecting pure-absorption EPR spectra, while adiabatic rapid scan can further improve the continuous-wave and NARS experiment by changing the effective microwave magnetic field at the sample. This allows for an increase of microwave power, and thus, increase in EPR signal for saturable signals. \cite{JOSHI200544} It should be noted that the excitation of a spin packet goes through a continuum of passage from the steady-state CW experiment to the non-adiabatic rapid scan to adiabatic rapid scan, and finally to the free-induction decay pulse. 
+
+While the non-adiabatic rapid scan method can be implemented on commercial pulse bridges with no hardware changes, it does require some technical expertise. \cite{MOSER2017} However, to perform adiabatic rapid scan experiments on protein samples, custom current drivers are needed to increase the swept field amplitude. For simplicity, in this work, we have implemented only non-adiabatic rapid scan.
+
+\subsubsection*{Electron Spin Echo Pulse.}
+The field-swept two-pulse electron spin-echo (ESE) experiment uses a ${\pi/2\!-\!\tau\!-\!\pi}$ pulse sequence. The field is stepped and a whole spectrum is acquired. This is the standard pulse sequence to collect an EPR spectrum, and is illustrated in Fig.~\ref{fig:EPRpulse}. \cite{schweiger2001principles} For systems with little nuclei interaction, the ESE experiment will mimic the pure absorption spectrum of the CW experiment. In this experiment a $\pi/2$-pulse is applied which results in the magnetization vector $\mathbf{M}$ to be tipped into the $x$-plane. Over a time $\tau$, the magnetization dephases into the $x$-$y$-plane, where an applied $\pi$-pulse inverts the magnetization. After the same time $\tau$, the magnetization is refocused and an echo is observed. The integral of this echo is recorded, where the intensity is a function of the magnetic susceptibility absorption $\chi''$ (Eqn.~\ref{eq-2:chi}) interacting with the resonator.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics{Kapitel/Ch1-images/PulseExperiments.eps}
+ \caption[Pulse EPR sequences.]{The pulse EPR sequences used in this work. Field-swept electron spin echo (ESE) is performed over a series of field steps, recording the entire spectrum. Electron Spin Echo Envelope Modulation (ESEEM) and Hyperfine Sub-level Correlation (HYSCORE) are performed at a single field position. The nutation experiment is used in this work to determine the efficiency parameter $\Lambda_{ave}$. }
+ \label{fig:EPRpulse}
+\end{figure}
+
+Specifically, the signal from a pulse is derived from the reciprocity principle of electromagnetics. \cite{HOULT2011329} The initial magnitude of the magnetization can be described as $\mathbf{M} = M_0 \mathbf{B}_z$, where $M_0$ is the dc bulk magnetization. When a time-varying magnetic field is applied, the bulk magnetisation takes the form of the magnetic susceptibility of Eqn.~\ref{eq-2:chi}. If we assume the excitation coil is the same as the pickup coil, after a $\pi/2$-pulse is applied, the electromotive force (emf) that is induced on the coil is 
+\begin{equation}
+    \xi = - \int \frac{\partial \mathbf{B}_{1r} \cdot \mathbf{M}_0}{\partial t} dV_s,
+\end{equation}
+which is transferred to a voltage across the tank-circuit capacitance. The voltage, assuming a homogeneous magnetic field and a unit volume, is such that
+\begin{equation}
+    V_0 = - 4\pi \eta \int \frac{\partial \mathbf{B}_{1r} \cdot \mathbf{M}_0}{\partial t} dV_s = - 4 \pi \eta \frac{\partial \phi}{\partial t},
+\end{equation}
+where $\partial \phi/\partial t$ is time varying magnetic flux, which includes the permeability defined in Eqn.~\ref{eq-2:permea}. \cite{schumacher1970introduction,slichter1978principles,HOULT2011329} The final output to the receiver is multiplied by the $Q$-value of the tank circuit, which transforms the voltage proportional to the stored energy of the circuit. \cite{ramo1984fields} The formulation of $V_0 Q$ can be related directly to the parameters defined by Feher in Eqn.~\ref{ch2-fehereq}, where the applied microwave magnetic field is held constant in order to provide a $\pi/2$-pulse, as defined by the saturable signal conditions.
+
+The voltage $V_0$ decays exponentially with the spin-lattice relaxation time $T_2$ and, within the decay envelope, exists the magnetization dephasing from the $x$-$y$-plane. The signal directly after a $\pi/2$-pulse is known as the free-induction decay (FID) and it is this dephasing that is refocused after time $\tau$ to form the echo in the ESE experiment. Therefore, experimental parameter $\tau$ must be chosen to allow for sufficient ring-down of the tank-circuit, but not so long as the signal $V_0$ has decayed beyond detection.
+
+\subsubsection*{ESEEM and HYSCORE.}
+The Electron spin echo envelope modulation (ESEEM) experiment is performed in this work has a ${\pi/2\!-\!\tau\!-\!\pi/2\!-\!t_1\!-\!\pi/2}$ pulse sequence. The three-pulse variation of ESEEM (3P-ESEEM) is illustrated in Fig.~\ref{fig:EPRpulse}. ESEEM is capable of resolving hyperfine and quadrupole interactions of the electron to neighboring nuclei. It is complementary to electron-nuclear double resonance experiments (ENDOR). \cite{schweiger2001principles,Doorslaer2007,Harmer2009,CUTSAIL20151370}
+
+The 3P-ESEEM signal used in this work arises from the semi-forbidden transitions between the different $M_s$ manifolds ($\pm \ket{\frac{1}{2}}$; Fig.~\ref{fig:EPREnergy}), but within the same $M_I$ manifold. This nuclear coherence mixing is directly probed by the dephasing that is occurring at time $\tau$ which is allowed to mix for time $t_1$. 
+
+Unlike the two-pulse ESEEM signal, the 3P-ESEEM does not obtain the sum and differences of the modulating frequencies, potentially simplifying analysis. However, a drawback of the 3P-ESEEM method is the dependence of the signal on the $\tau$ chosen. Known as ``$\tau$-suppression'' occurs because of the time at which the coherence mixing $\pi/2$-pulse starts could be at a null of the nuclear modulation frequency. \cite{schweiger2001principles} This effect can be minimized by summing a series of 3P-ESEEM measurements at different $\tau$ values.
+
+Two regimes of hyperfine coupling exist, denoted as strong $a_{iso}/2 < \nu_n$ and weak $a_{iso}/2 > \nu_n$ coupling, depicted in the bottom-right inset of Fig.~\ref{fig:EPREnergy}. The modulating resonance frequency $\nu_n$ is related to the nuclei by the nuclear Zeeman energy $-g_n \beta_n B_0/\hbar$. The tensor information is directly observed from the summation of the hyperfine and quadrupole interactions of Eqns.~\ref{eq-2:hfi} and \ref{eq-2:nqi}. Using an ESEEM experiments, the modulation frequencies $2\nu_n \pm 3P_z$ for strong coupling and $a_{iso} \pm 3P_z$ for weak coupling (Fig.~\ref{fig:EPREnergy} $\mathbf{d}$, $\mathbf{e}$, $\mathbf{f}$, $\mathbf{g}$) are directly observed. In addition, the double-quantum peaks (Fig.~\ref{fig:EPREnergy} $\mathbf{h}$, $\mathbf{i}$) are observed at the frequencies $\nu^DQ_{\alpha,\beta}$ described by Eqn.~\ref{eq-2:doubleQ}. The modulation depth observed in the time-domain trace is dictated by
+\begin{equation}
+    k(\theta) = \text{Sin}^2(2\theta) = \bigg(\frac{B_\theta}{\nu_I}{\nu_\alpha \nu_\beta}\bigg)^2
+\end{equation}
+where $\theta$ is the angle between the non-isotropic electron-nuclear hyperfine tensor $\mathbf{T}$ of Eqn.~\ref{eq-2:hfiT} and the static magnetic field $\mathbf{B}_z$. When either $\mathbf{T}$ is zero or $\mathbf{B}_z$ is aligned with a principal axis, the modulation depth is reduced to zero.
+
+The hyperfine sublevel correlation (HYSCORE) experiments add an additional pulse from 3-Pulse ESEEM. A  ${\pi/2\!-\!\tau\!-\!\pi/2\!-\!t_1\!-\!\pi\!-\!t_2\!-\!\pi/2}$ pulse sequence results in an echo $\tau$ seconds after the last $\pi/2$ pulse. The values for $t_1$ and $t_2$ are swept to form a 2D experiment at a fixed magnetic field position. The HYSCORE experiment allows for the separation of overlapping modulation frequencies found in large anisotropic hyperfine systems. Additionally, HYSCORE separates the strong $a_{iso}/2 < \nu_n$ and weak $a_{iso}/2 > \nu_n$ coupling regimes into the ($-$,$+$) quadrant and ($+$,$+$), respectively. The use of HYSCORE allows for a visual representation of the different modulating frequencies such that the $\nu_n$ or $a_{iso}/2$ can be read directly from the graph. 
+
+Although HYSCORE is a useful tool for visualization and human-aided analysis, a set of ESEEM spectra are typically simulated for fitting and following orientation dependant single crystal data to obtain the full hyperfine-tensor. \cite{Shane1994SingleCrystalESEEM}
+
+\subsubsection*{Nutation.}
+The nutation experiment is performed at a field position of maximum EPR signal and a perturbation pulse is added to the electron spin-echo experiment such that a pulse sequence of ${t_1\text{-pulse}\!-\!\text{T}\!-\!\pi/2\!-\!\tau\!-\!\pi}$ if formed. The $t_1$-pulse is varied resulting in a perturbation on the electron spin echo experiment at a fixed field. The variation is a function of the tip angle of the spin-system and can be related to the magnetic field incident on the sample. In resonators with inhomogeneous fields, the average of the magnetic field is measured and is directly comparable to $\Lambda_{ave}$ of Eqn.~\ref{eq:lamave}.
+
+\section{Crystal Orientations and Molecular Frames}
+In this section, a basic understanding of crystal orientations and how to relate the frames to the EPR parameters is discussed. 
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.75\textwidth]{Kapitel/Ch1-images/CrystalRotation.eps}
+ \caption[Single crystal EPR frames.]{Relation of the Laboratory system frame $[\mathbf{L}_1\; \mathbf{L}_2\; \mathbf{L}_3]$ to the crystal frame $[\mathbf{a}\; \mathbf{b}\; \mathbf{c}]$ and the molecular frame $[\mathbf{x}\; \mathbf{y}\; \mathbf{z}]$. The molecular frame at Site I and Site II are related by the P$1\;2_1\;1$ crystal symmetry.}
+ \label{fig:CrystalOrientation}
+\end{figure}
+
+\paragraph*{Laboratory System Frame} We start with the Laboratory system frame $[\mathbf{L}_1\; \mathbf{L}_2\; \mathbf{L}_3]$, illustrated in Fig.~\ref{fig:CrystalOrientation} as the blue axes. The laboratory system frame represents the physical coordinates as it exists in the EPR laboratory. The laboratory system frame is defined with the static magnetic field (${\textbf B}_0$) is oriented along the L$_1$-axis, while in this work the microwave magnetic field (${\textbf B}_1$) is along the L$_3$-axis. 
+
+\paragraph*{Crystal Frame} The crystal frame $[\mathbf{a}\; \mathbf{b}\; \mathbf{c}]$ is defined with respect to the laboratory frame. When the crystal is inserted into the resonator, the crystal orientation is typically unknown. The crystal frame rotation can be defined by a set of Euler angles. Herein we use the nomenclature of the EasySpin simulation package. \cite{STOLL200642} The three Euler angles ($\alpha$, $\beta$, $\gamma$) define the rotation around defined axes of the current frame. The first angle $\alpha$ is a rotation around the $z$-component, defined by
+\begin{equation}
+    Rot_z[\theta] = \begin{bmatrix}
+   Cos[\theta] & -Sin[\theta] & 0\\
+    Sin[\theta] & Cos[\theta] & 0\\
+    0 &  0 & 1
+   \end{bmatrix}
+\end{equation}
+and the second angle $\beta$ is a rotation around the new $y$-component denoted $y'$, defined by
+\begin{equation}
+    Rot_y[\theta] = \begin{bmatrix}
+   Cos[\theta] & 0 & Sin[\theta]\\
+     & 1 & 0\\
+    -Sin[\theta] &  0 & Cos[\theta]
+   \end{bmatrix}
+\end{equation}
+and finally the angle $\gamma$ is another rotation around the new $z$-component denoted $z''$. This is aptly named the zyz convention. This transformation can be performed directly by calculating the rotation matrix, such that
+\begin{equation}
+    Rot_{zyz}[\alpha, \beta, \gamma] = Rot_{z''}[\gamma] \cdot Rot_{y'}[\beta] \cdot Rot_z[\alpha],
+\end{equation}
+and applying it to the coordinates of the crystal frame
+\begin{equation}
+ \begin{bmatrix}
+  \tilde{x}_\text{L1} & \tilde{x}_\text{L2} & \tilde{x}_\text{L3} \\
+  \tilde{y}_\text{L1} & \tilde{y}_\text{L2} & \tilde{y}_\text{L3} \\
+  \tilde{z}_\text{L1} & \tilde{z}_\text{L2} & \tilde{z}_\text{L3} 
+  \end{bmatrix} = Rot_{zyz}[\alpha, \beta, \gamma] \cdot \begin{bmatrix}
+  a_1 & a_2 & a_3 \\
+  b_1 & b_2 & b_3 \\
+  c_1 & c_2 & c_3 
+  \end{bmatrix}\label{eqn:rotate}.
+\end{equation}
+Using Eqn.~\ref{eqn:rotate}, the crystal frame $[\mathbf{a}\; \mathbf{b}\; \mathbf{c}]$ is rotated with respect to the laboratory frame $[\mathbf{L}_1\; \mathbf{L}_2\; \mathbf{L}_3]$. 
+
+\paragraph*{Molecular Frame} The molecular frame relates the measured atomic structure from X-ray crystallography diffraction experiments to the crystal frame. From the crystal structure (PDB ID: 4XDC) the molecular frame of the H-cluster can be determined. The molecular frame is calculated using the distal iron (Fe$_d$) as the origin, shown in Fig.~\ref{fig:MolecularFrame}. 
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.5\textwidth]{Kapitel/Ch1-images/Ch2-MolFrame.eps}
+ \caption[Molecular Frame of FeFe-hydrogenase H$_{ox}$ state.]{Molecular Frame of FeFe-hydrogenase H$_{ox}$ state from PDB ID: 4XDC. With the axes labeled as $g_x$: red, $g_y$: green, and $g_z$: blue. The distal iron (Fe$_d$) is indicated and the $g$-components are $g_z>g_y>g_x$.}
+ \label{fig:MolecularFrame}
+\end{figure}
+
+The three axes for the molecular frame were chosen as i) an axis from the distal iron (Fe$_d$) to the proximal iron (Fe$_p$), ii) the normal of a plane calculated from the proximal iron, distal iron, and the nitrogen of the ADT-ligand  (Fe$_p$-Fe$_d$-N$_1$), and iii) the cross product of (i) into (ii). The $g_z$-component was chosen to be the axis from Fe$_d$ to Fe$_p$ and the $g$-components are $g_z>g_y>g_x$. 
+
+A second molecular-frame (Molecular-Frame B) is needed since the [FeFe]-hydrogenase is crystallized with an asymmetric unit. The Molecular-Frame B is within Site I, shown as a red axis in Fig.~\ref{fig:CrystalOrientation}, and the molecular frame is defined the same same procedure as the Molecular-Frame A. 
+
+\paragraph{g-Tensor Frame} The $g$-tensor frame, which gives rise to the EPR signal, is also unknown and is defined as a rotation with respect to the molecular frame.
+
+\paragraph*{Crystal Symmetry} The crystal symmetry can be taken into account in the EasySpin simulations. For the case of the CpI hydrogenase from PDB ID 4XDC, they molecules crystallize into P$1\,2_1\,1$ symmetry. This crystal symmetry duplicates the molecular frame from Site I to Site II, illustrated in Fig.~\ref{fig:CrystalOrientation}, and, therefore, there exist two sites with asymmetric molecules within each unit cell.
+
+The crystal symmetry can be described by Euler angle rotation and a spacial translation. \cite{hovmoller1981rotation} From the vector $\mathbf{x}$ a copy to the ``equivalent position'' $\mathbf{\tilde{x}}$ is formed at the rotated $R_{yxy}[\alpha,\beta,\gamma]$ and translated $\mathbf{t}$ position in the crystal, described by
+\begin{equation}
+\mathbf{\tilde{x}} = R_{yxy}[\alpha,\beta,\gamma] \cdot \mathbf{x} + \mathbf{t}.
+\end{equation}
+
+For the P$1\,2_1\,1$ symmetry, it has a $[\tilde{a},\;\tilde{b},\;\tilde{c}]$ of $[-a,\;b+1/2,\;-c]$. This can be performed with a rotation matrix and translation defined by 
+\begin{equation}
+     \begin{bmatrix}
+  \tilde{a} \\
+  \tilde{b} \\
+  \tilde{c} 
+  \end{bmatrix} = \begin{bmatrix}
+   -1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 &  0 & -1\\
+   \end{bmatrix} \cdot      \begin{bmatrix}
+  a \\
+  b \\
+  c 
+  \end{bmatrix} + \begin{bmatrix}
+  0 \\
+  1/2 \\
+  0 
+  \end{bmatrix},
+\end{equation}
+and places another protein and asymmetric unit at Site II. 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.5\textwidth]{Kapitel/Ch2-Images/RotateMeLeftRight.eps}
+ \caption[Rotation Planes of micro-Helix.]{Shown are the two rotation planes available for crystal rotation.}
+ \label{fig:RotateMe}
+\end{figure}
+
+\paragraph*{Crystal Rotation} In order to obtain a magnetic resonance rotation pattern, the crystal must be rotated with respect to the magnetic field, illustrated in Fig.~\ref{fig:RotateMe}A. This is currently performed by rotating the entire resonator probe around the L$_3$ axis. If a secondary plane of is needed the angle can be modified by orientating the ${\textbf B}_1$ L$_2$-axis, illustrated in Fig.~\ref{fig:RotateMe}B by using a 90$^{\circ}$ bend. Currently, a secondary plane rotation is limited since the EPR signal is reduced as ${\textbf B}_1$ becomes parallel with ${\textbf B}_0$. 
+
+\section{Finite-element modeling Simulations}
+Commercially available electromagnetic finite-modeling software provides a suite in which boundary conditions, sources, and dielectric properties are combined to solve Maxwell's equations in a CAD-like environment. In this thesis, finite-element modeling is heavily relied upon to design, understand, and optimize microwave resonators. In this section, an introduction to Ansys Electromagnetics Suite (Pittsburgh, PA, USA; version 19.4; High Frequency Structure Simulator (HFSS)) and a practical exercise will be developed. 
+
+Ansys HFSS employs ``driven-mode'' and ``eigenmode'' solving domains. The ``eigenmode'' solver uses Maxwell's equations in their variational form to find the lowest energy states of a structure given its boundary conditions and electromagnetic material properties. \cite{sadiku2000numerical,jin2015finite} This lowest energy state, or eigenvalue, is then used to calculate the eigenvectors of the structure, yielding a wave solution. The eigenvalue problem assumes that both the differential equations and the boundary conditions are homogeneous. There is no source exciting the mode of interest. This becomes very important in geometries where the modes of the system are not known. In Ansys Electronics Desktop, solutions are normalized by the electric field (1~V/m) or to the stored electric energy.
+
+The ``driven-mode'' solves the non-homogeneous Maxwell's equations. Practically, one must devise a coupling system in ``driven-mode'' and, in this work, impedance matching considerations are implemented to maximize power transfer to the resonator. The ``driven-mode'' provides outputs similar to a vector network analyzer and is typically normalized to an input power of 1~W. 
+
+\paragraph*{Signal Calculations and Resonator Comparisons.}
+A method to obtain EPR signal has been formulated and is reproduced here. \cite{misrabook} This method uses the fields calculated in Ansys HFSS, accessed by the ``Field Calculator'', to determine a normalized EPR signal under saturating or nonsaturating conditions. This calculation can be performed using eigenmode or driven-mode methods and the scripts for Ansys HFSS are found in Appendix~A. 
+
+For a matched reflection cavity and a voltage-sensitive detector, Feher expressed the microwave EPR signal as
+\begin{equation}
+    S \propto \chi'' \eta Q P^{1/2} \qquad [\text{V}],\label{ch2-fehereq}
+\end{equation}
+where $\chi''$ is the imaginary part of the magnetic susceptibility which represents the magnitude of the absorption spectrum, $\eta$ is the filling factor, $Q$ is the unloaded $Q_0$-value with sample, and $P$ is the incident microwave power.  \cite{FeherSignal} Signal is proportional to volts when we assume the system is critically coupled and calculated at microwave resonance. When comparing resonators, we assume the sample has the same concentration for an arbitrary volume and, as such, the magnetic susceptibility $\chi''$ can simply be proportional to frequency. This assumption is used to incorporate the Boltzmann factor to resonator comparisons (i.e. temperature or frequency differences).
+
+The $Q$-value of the system can be calculated by the ratio of the stored energy per cycle (in radians) and the power losses. Such that
+\begin{equation}
+    Q = \frac{\omega U_m}{P_l},
+\end{equation}
+where $\omega$ is the microwave resonance frequency in radians, $U_m$ is the magnetic stored energy, and $P_l$ is the power losses in the cavity walls and sample. At resonance, the magnetic and electric stored energy are equal. \cite{ramo1984fields} We choose the magnetic stored energy for simplicity when dealing with a geometry where there are different dielectric volumes. Electric stored energy includes the relative permittivity $\epsilon_r$ accounted for in each volume, while magnetic stored energy includes the relative permeability $\mu_r$. In most cases, the relative permeability is equal to unity and we only need the free-space permeability $\mu_0$. Therefore the magnetic stored energy is
+\begin{equation}
+    U_m = \frac{\mu_0}{2} \int \mathbf{H}_1\cdot\mathbf{H}_1^* dV \qquad [\text{W}],
+\end{equation}
+where ${\textbf H}_1$ is the microwave magnetic field in all space ($V$).
+
+The filling factor is defined as the ratio of the magnetic field energy in the sample that gives rise to an EPR signal to the magnetic field energy in all space. This can be calculated as
+\begin{equation}
+ \eta = \frac{\mu_0 \int {\mathbf H}_{1r} \cdot {\mathbf H}_{1r}^* dV_s}{\int {\mathbf H}_1 \cdot {\mathbf H}_1^* dV}, \label{eq-2:filling}
+\end{equation}
+where ${\textbf H}_{1r}$ is one component of the clockwise (or counter clockwise) rotational component of the linearly polarized ${\textbf H}_1$ field perpendicular to the static magnetic field in the sample volume ($V_s$). \cite{jackson1975classical} In magnetic resonance, the spin system is coupled to either the right-handed or left-handed (clockwise or counter clockwise) polarization of the magnetic field. 
+
+A linearly polarized wave can be decomposed into two in-phase circular components and it is only from one of these components the spin system couples. \cite{abragam1961} From Ref.~[2.\kern-0.4em\citenum{jackson1975classical}] an expression for the right-handed ($+$) or left-handed ($-$) component of the magnetic field can be derived, such that
+\begin{equation}
+    \mathbf{H}_{1r} =  \mathbf{H}_{1}\cdot\frac{\mathbf{\hat{y}} \pm i\mathbf{\hat{z}}}{\sqrt{2}} \qquad \text{[T]}, \label{circpoleH}
+\end{equation}
+where we assume the static magnetic field B$_0$ is in the $\mathbf{\hat{x}}$ direction. In cavity resonators, where the magnetic field is well defined, the left- and right-handed components are equal. However, open structures and systems with multiple wavelengths within the sample could exhibit elliptical polarization. This results in different magnitudes and field profiles for the two components. Herein, we only use this formulation with samples that exhibit linear polarization in the sample (Chapter~3 and 5) and rely on other methods to approximate the EPR signal in cases where multiple wavelengths are involved (Chapter~4).
+
+The power loss in the system is broken up into two distinct types: dielectric losses and Ohmic losses on the surfaces of conductors. Fior a bulk conductor we can calculate the power dissipated on the surface of a conductor as
+\begin{equation}
+    P_{lw} = \frac{R_s}{2}\int \mathbf{\hat{n}}\times\mathbf{H}\cdot\mathbf{H}^* dS_w \qquad [\text{W}]
+\end{equation}
+where $\mathbf{\hat{n}}$ is normal to the conductor surface ($S_w$). The resistance of the surface is calculated by the real part of the surface impedance, defined as
+\begin{equation}
+    Z_s = \sqrt{\frac{\omega \mu_0}{2 \sigma}}(1-i)
+\end{equation}
+where $\sigma$ is the conductivity of the metal surface. The power dissipated in a dielectric can be calculated by
+\begin{equation}
+    P_{ld} = \frac{\omega \epsilon_0 \epsilon_r''}{2}\int \mathbf{E} \cdot \mathbf{E}^* dV_d \qquad [\text{W}],
+\end{equation}
+where the imaginary part of the dielectric permittivity ($\epsilon_r = \epsilon_r' - i \epsilon_r''$) is integrated over the dielectric volume $V_d$. \cite{jackson1975classical,harrington1961time} The total power loss of the system is the summation of all the power losses of the conductors and $n$ number of dielectrics which may include the sample, sample tube, and other plastics and ceramics such that
+\begin{equation}
+    P_l = P_{lw} + \sum_{i=1}^n P_{ld_i} \qquad \text{[W].}
+\end{equation}
+The power loss in the system for the sample, resonator walls, and sample holder end sections is defined as $P_s$, $P_w$, and $P_e$, respectively, in the scripts of Appendix~A. The calculations for $P_s$ and $P_e$ rely on the constants \textit{ImDiSam} and \textit{ImDiHold} which are set to the imaginary part of the relative permittivity constant $\epsilon_r''$.
+
+From Eqn.~\ref{ch2-fehereq} the signal can be calculated by substituting the appropriate equations. Two EPR signal conditions can be calculated: signal unsaturable (Su; Unsat.) and signal saturable (Ss; Sat.). In continuous-wave  experiments, signal unsaturable is defined as the EPR signal at constant incident power, while signal saturable is defined as the EPR signal at constant magnetic field at the sample. For pulse experiments, signal saturable is proportional to the EPR signal. A saturable sample can be calculated by normalizing to the magnetic field and computing
+\begin{equation}
+    S_s = \frac{\chi'' \omega}{10^4 P_l^{1/2} \text{Max}|\mathbf{H_{1r}}|} \int \mathbf{H_{1r}} \cdot \mathbf{H_{1r}^*} dV_s \qquad \text{[V]}. \label{ch2-eq:ss}
+\end{equation}{}
+The unsaturable sample can be calculated by normalizing to the power and computing
+\begin{equation}
+    S_u = \frac{\mu_0 \chi'' \omega}{P_l} \int \mathbf{H_{1r}} \cdot \mathbf{H_{1r}^*} dV_s \qquad  \text{[V]}. \label{ch2-eq:su}
+\end{equation}{}
+The efficiency parameter $\Lambda_{max}$, as introduced by Hyde {\em et al.} \cite{hydehoff}, is defined as
+\begin{equation}
+    \Lambda_{max} = \frac{1}{10}\frac{\mu_0 \text{Max}|\mathbf{H_{1r}}|}{P_l^{1/2}} \quad \text{[mT/W}^{1/2}],
+\end{equation}
+where Max$|\mathbf{H_{1r}}|$ is the maximum magnitude of $\mathbf{H_{1r}}$ in the sample (typically in the center of the cavity) and is assumed to be uniform over the sample volume. \cite{hydehoff} The scalar converts Gauss into milliTesla. 
+
+In order to better access the resonator efficiency when the magnetic field is not uniform, we calculate an average over the sample volume, 
+\begin{equation}
+    \Lambda_{ave} = \frac{1}{10}\frac{\mu_0 \int |\mathbf{H_{1r}}| dV_s}{P_l^{1/2} V_t} \quad [mT/W^{1/2}], \label{eq:lamave}
+\end{equation}
+where $V_t$ is the total volume of the sample. The average resonator efficiency, which takes into account the magnetic field profile along the sample volume, is the measurable value when a nutation experiment is performed. The calculator files can be found in Appendix~1.
+
+\paragraph*{Comparison of a Planar micro-Resonator and micro-Helix}
+In Chapter 5, the planar micro-resonator (PMR) \cite{Suter2005,Suter2008,suter2015} and micro-Helix geometries are thoroughly introduced. In this section we will construct an eigenmode solution of both the PMR and micro-helix to compare how the signal and resonator efficiency $\Lambda_{ave}$ scale with a lossy aqueous sample ($\epsilon_r = 63 - i26.46$ from Ref.~[2.\kern-0.4em\citenum{EllisonWater2017}]) and relatively-lossless ice sample ($\epsilon_r=3.17-i0.0035$ from Ref.~[2.\kern-0.4em\citenum{icedielectric}]). 
+
+The files can be found at https://github.com/jsidabras/HFSSTutorial and the Ansys \textit{aedt} file has 4 projects to be solved. The projects created use local variables for performing parametric sweeps. For instance, the sample radius on both geometries can be varied and this parameter will be used in this comparison. Mesh operations have been added on the quartz capillary tube and on the surface of the main resonator geometry to reduce numerical fluctuations and obtain a field profile void of discontinuities. An eigenmode solution is used for simplicity. 
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\textwidth]{Kapitel/Ch2-Images/Ch2-SweepOutput.eps}
+ \caption[EPR characteristics as the sample radius is swept.]{EPR characteristics for the PMR with sapphire substrate (black; $\blacktriangle$) and the 0.4~mm micro-helix (red; $\CIRCLE$) with a water (solid) and ice (dashed) sample. Shown are the EPR characteristics as the sample radius is swept for the A) resonator efficiency $\Lambda$, B) $Q_0$-value, C) unsaturated EPR signal, and D) saturable EPR signal. The dashed-dot lines indicate the largest practical capillary inner radius for the helix (red) and PMR (black).}
+ \label{fig:SweptData}
+\end{figure}
+
+Shown in Fig.~\ref{fig:SweptData} are the simulated EPR characteristics for the micro-helix (red; $\CIRCLE$) and planar micro-resonator (black; $\blacktriangle$) geometries. The ice sample is shown as a dashed line, while the aqueous sample is shown as a solid line. The sample radius is swept and a quartz sample holder with a wall thickness of 0.025~mm is used. The dashed-dot line indicates the largest commercially available practical capillary inner radius for the helix (red) and PMR (black). In this study, we focus on a ``concentration sensitivity'' comparison. By comparing ``concentration sensitivity'' we focus on the resonator performance assuming a varying sample volume at a fixed concentration.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.9\textwidth]{Kapitel/Ch2-Images/Ch2-AnsysFields.eps}
+ \caption[Simulated field distribution for Helix and PMR.]{Simulated field distribution for the magnitude of the electric field for the A) planar micro-resonator and B) micro-helix and the magnitude of $\mathbf{H_{1r}}$ with $\mathbf{H}_0$ in the $y$-direction for the C) planar micro-resonator and D) micro-helix in the $x$-$y$-plane. And the magnitude of $\mathbf{H_{1r}}$ with $\mathbf{H}_0$ in the $y$-direction for the E) planar micro-resonator and F) micro-helix in the $x$-$z$-plane. }
+ \label{ch2-fig:FieldData}
+\end{figure}
+
+For the PMR (black; $\blacktriangle$), little change in both the average resonator efficiency $\Lambda_{ave}$ and $Q_0$-value is exhibited as the sample radius is increased, Figs.~\ref{fig:SweptData}A and \ref{fig:SweptData}B, respectively. From the simulations we can see that the electric field, which gives rise to losses, is well contained in the planar micro-resonator geometry away from the sample loop. Shown in Fig.~\ref{ch2-fig:FieldData}A is a plot of the magnitude of the electric field. A potential is formed across the PMR gap and a gradient of charge is formed in the loop which goes to zero opposite of the gap. This is similar to the electric field profile of a one-loop--one-gap loop-gap resonator.  
+
+In the PMR, the value of $\Lambda_{ave}$ is approximately one third of the micro-Helix (red $\CIRCLE$; in Fig.~\ref{fig:SweptData}A). The reduction in $\Lambda_{ave}$ is due to a significant portion of the magnetic field stored energy being located outside of the sample volume in the PMR geometry and significant inhomogeneity of the magnetic field along the axis. This is illustrated in Fig.~\ref{ch2-fig:FieldData}C where the magnitude of $\mathbf{H_{1r}}$ with $\mathbf{H}_0$ in the $x$-direction is plotted. The quantity $\mathbf{H_{1r}}$ is the magnetic field that gives rise to the EPR signal and a significant portion of this magnetic field lies outside of the sample region. This is also true along the axis, shown in Fig.~\ref{ch2-fig:FieldData}E, where a large gradient of $\mathbf{H_{1r}}$ is present. 
+
+With the micro-helix geometry, the $\mathbf{H_{1r}}$ is concentrated in the center and very little magnetic field is found outside of the sample volume, shown in Fig.~\ref{ch2-fig:FieldData}D. Additionally, the $\mathbf{H_{1r}}$ field profile along the axis is more homogeneous compared to the PMR, shown in  Fig.~\ref{ch2-fig:FieldData}F. The homogeneous magnetic field in the micro-helix leads to a higher filling factor $\eta$ and, ultimately, a higher average resonator efficiency $\Lambda_{ave}$, as shown in Fig.~\ref{fig:SweptData}A.
+
+As anticipated from Eqn.~\ref{ch2-eq:su}, relatively lossless samples will display EPR unsaturable signal growth that is proportional to the magnetic field squared within the sample volume, shown in Fig.~\ref{fig:SweptData}C as a dashed line for the micro-helix (red; $\CIRCLE$) and PMR (black; $\blacktriangle$). With such samples, the EPR signal expected by using the micro-helix is significantly enhanced compared to the PMR. In contrast, the saturable sample defined by  Eqn.~\ref{ch2-eq:ss} has a maximum due to the interplay of the power loss $P_l$ and the magnetic field in the sample. Since the micro-helix exhibits an azimuthal component of the electric field that penetrates into the sample, shown in Fig~\ref{ch2-fig:FieldData}B, lossy aqueous samples are problematic in this geometry. Likewise, the  resonator efficiency $\Lambda_{ave}$ and $Q_0$-value are significantly reduced as the diameter of the aqueous sample increases, shown in Fig.~\ref{fig:SweptData}A and \ref{fig:SweptData}A, respectively.
+
+Aqueous sample simulations show that the PMR losses do not increase with the size of the sample and little changes of the unsaturable and saturable signal are illustrated, shown as a solid black line in Figs.~\ref{fig:SweptData}C and \ref{fig:SweptData}D. Compared to the micro-helix geometry with lossy aqueous samples, the PMR performs 5 times better for experiments at the same microwave power (unsaturable signal) and 50\% better for the experiments at same microwave field (saturable signal). This means the PMR geometry may be advantageous for room temperature samples and further improvement to the PMR to increase the filling factor $\eta$ is underway. 
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\textwidth]{Kapitel/Ch2-Images/Ch2-AbsSweepOutput.eps}
+ \caption[Volume normalized swept EPR signal optimization.]{Volume normalized Swept EPR signal for the PMR with sapphire substrate (black; $\blacktriangle$) and the 0.4~mm micro-helix (red; $\CIRCLE$) with a water (solid) and ice (dashed) sample. Shown are the data fro the A) unsaturated EPR signal and B) saturable EPR signal normalized to sample volume. The active region of the micro-helix and planar micro-resonator is assumed to be 1.2~mm and 1.1~mm, respectively. The dashed-dot line indicates the largest practical capillary inner radius for the helix (red) and PMR (black).}
+ \label{fig:AbsSweptData}
+\end{figure}
+
+This example assumed the sample tube is completely filled and extends beyond the active region. It is noted that, the active length of the two resonators is different and the data plotted in Fig.~\ref{fig:SweptData} can be normalized to the active volume and a comparison of the ``absolute sensitivity'' can be performed. Based on the magnetic field profile of  Figs.~\ref{ch2-fig:FieldData}E and \ref{ch2-fig:FieldData}F, the active region of the micro-helix and planar micro-resonator is assumed to be 1.2~mm and 1.1~mm, respectively, and a volume normalized signal is plotted in Fig.~\ref{fig:AbsSweptData}. Comparing the resonators at a equivalent sample volume is the focus of Chapter~5 for single-crystal EPR of with sample volumes smaller than 27~nL. At a fixed sample volume, the losses in the micro-helix associated with the aqueous sample still significantly affect the performance of the resonator, plotted in Figs.~\ref{fig:AbsSweptData}A and \ref{fig:AbsSweptData}B as a solid line for the micro-helix (red; $\CIRCLE$). However, compared to the PMR (black; $\blacktriangle$) there exists some sample volumes where the micro-helix yields a higher EPR signal. Finally, at a fixed sample volume and a relatively lossless sample, the micro-helix significantly outperforms the PMR geometry, plotted in Figs.~\ref{fig:AbsSweptData}A and \ref{fig:AbsSweptData}B as a dashed lines.
+
+This simple optimization sweep teaches about differences in such simple geometries and leads to intuition for further performance improvements. For instance, there is room for improvement for small volume aqueous samples. Such improvements would focus on reducing the electric field in the sample while maintaining good magnetic field homogeneity. 
+
+
+
+{\renewcommand{\bibsection}{\clearpage\section*{\bibname}\markboth{\bibname}{\bibname}}
+\renewcommand{\bibname}{CHAPTER 2. REFERENCES}
+\bibliographystyle{elsarticle-num}
+\bibliography{Kapitel/Ch5-References}
+}
+

@@ -1,0 +1,34 @@
+% packege to define title page
+
+\ProvidesPackage{Tex/titelseite}
+\RequirePackage{graphicx}
+
+\newcommand*{\project}[1]{\gdef\@project{#1}}
+
+\newcommand*{\@project}{PhD-Thesis}
+
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+
+\newcommand*{\@supervisor}{\texttt{\string\supervisor} Prof. Dieter Suter}
+
+\renewcommand*{\maketitle}{
+	\begin{titlepage}{
+			\centering
+			\includegraphics[width=10cm]{tud_logo_cmyk}\par
+	}
+	%\vspace{0.5cm}
+	%\centering{\scshape\LARGE Technical University Dortmund \par}
+	\centering
+	\vspace{0.5cm}{\scshape\Large\@project\unskip\strut\par}
+	\vspace{2.5cm}{\huge\bfseries\@title\unskip\strut\par}
+	\vspace{3cm}{\LARGE\itshape\@author\unskip\strut\par}
+	\vfill
+	Supervised by:\par
+	\@supervisor\unskip\strut\par
+
+	\vfill
+
+	{\large \@date\par}
+	\end{titlepage}
+}
+\endinput

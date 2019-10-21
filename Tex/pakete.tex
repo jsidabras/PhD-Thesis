@@ -1,0 +1,121 @@
+%--------------------------A------------------------------------
+\usepackage[toc,page,title,header]{appendix}
+
+%--------------------------B------------------------------------
+\usepackage[main=english,ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%--------------------------C------------------------------------
+%csquotes %vor biblatex
+
+%--------------------------F------------------------------------
+%\usepackage[T1]{fontenc}
+
+%--------------------------G------------------------------------
+%glossaries %nach 'hyperref', 'babel', 'inputenc' und 'fontenc'
+
+%--------------------------H------------------------------------
+%hyperref %am Ende
+\usepackage{hhline}
+
+
+%--------------------------I------------------------------------
+%inputenc %vor csquotes
+\usepackage[texindy]{imakeidx}
+	\usepackage[totoc]{idxlayout}
+
+%--------------------------X------------------------------------
+\usepackage{graphicx}
+%\advance\paperheight by-20mm
+%\usepackage[cam,cross,horigin=-27.9mm,vorigin=-13.5mm]{crop}
+%\usepackage{color}
+%\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage{listings}
+\definecolor{mygreen}{rgb}{0.196, 0.804, 0.196}
+\definecolor{mylilas}{rgb}{1.0, 0.0, 1.0}
+\definecolor{Black}{rgb}{0.0, 0.0, 0.0}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\usepackage[sectionbib, square, super, numbers, comma, sort&compress]{natbib}
+
+\makeatletter
+\renewcommand\NAT@citesuper[3]{\ifNAT@swa
+\if*#2*\else#2\NAT@spacechar\fi
+\unskip\kern\p@\textsuperscript{\NAT@@open#1\if*#3*\else,\NAT@spacechar#3\fi\NAT@@close}%
+   \else #1\fi\endgroup}
+\makeatother
+
+\usepackage{chapterbib}
+\makeatletter
+\let\@cb@insertprefix\relax
+\def\@biblabel#1{[\@CitationPrefix#1]}
+\def\NAT@open{[\@CitationPrefix}
+%%% Uncomment if you change the bibliography heading/title
+
+\makeatother
+\usepackage[footskip=0pt, bottom=2.5cm]{geometry}
+% \geometry{margin=0.6in}
+% \usepackage{lineno}
+% \linenumbers
+
+%
+%\newcommand{\envelope}{(corresponding author)}
+% if you have access to the marvosym font use its envelope symbol
+%\usepackage{marvosym}
+%Images for AMR
+% 39 mm, 84 mm, 129 mm, or 174 mm wide
+
+
+\newcommand{\cylTE}{\texorpdfstring{TE$_{\text{01U}}$}}
+\usepackage{pdfpages}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\vectu}[2]{\boldsymbol{#1}_{#2}}
+\newcommand{\vectop}[1]{\widehat{\boldsymbol{#1}}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\gmatrix}{\mathbf{g}}
+\newcommand{\ggT}{\gmatrix\gmatrix^\text{T}}
+\newcommand{\normsquared}[1]{\left|#1\right|^2}
+
+\usepackage{multirow}
+
+\hyphenation{wave-guide}
+
+\hyphenpenalty=8000
+\usepackage[shortcuts]{extdash}
+
+%------------------------ENDE-----------------------------------
+\usepackage[pdfborder={0 0 0},hypertexnames=true,colorlinks=true, linkcolor = {Black}, citecolor = {Black}]{hyperref} %am Ende 
+
+%----------------------eigene Packages-------------------------
+\usepackage{Tex/titelseite}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\paragraph}{\normalfont\bfseries}
+\titleformat*{\subparagraph}{\normalfont\itshape}
+\titlespacing*{\subsection}{0pt}{15pt}{0.5em}
+\titlespacing*{\paragraph}{5pt}{0pt}{1em}
+\titlespacing*{\subparagraph}{0pt}{0.5em}{5pt}
+\hbadness=99999
+\vbadness=99999
+\overfullrule=2cm

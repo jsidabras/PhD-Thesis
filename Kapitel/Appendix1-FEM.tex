@@ -1,0 +1,62 @@
+\chapter[Finite-element Modeling Signal Calculations]{Finite-element Modeling Signal Calculations}
+\chaptermark{\textit{CalculateSignal-Water.cls}}
+ 	\definecolor{light-gray}{gray}{0.90}
+\lstset{language=Perl,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    tabsize=2,
+    frame=single,
+    backgroundcolor = \color{light-gray},
+    rulecolor=\color{black},
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+\section*{Signal Calculations for Ansys HFSS using Water Dielectric}
+
+The following lines of code can be placed in a file called ``CalculateSignal-Water.cls'' and placed in the \textit{PersonalLibs} folder. The \textit{cls} file should be loaded in the \textit{\textbf{Fields Calculator}} twice, in order to load all expressions.\footnote{This seems to be a dependency bug.} 
+
+All codes can be found at https://github.com/jsidabras/HFSSTutorial/.
+
+
+\subsection*{Constants}
+The following constants are defined. 
+\begin{itemize}
+    \item \textbf{ImDieHold}: The imaginary dielectric constant ($\epsilon''$) of the dielectric that holds the resonator. In the case of the PMR, this is the sapphire. In the case of the micro-Helix, this is the PTFE.
+    \item \textbf{ImDieSam}: The imaginary dielectric constant ($\epsilon''$) of the sample. In the case of water, the dielectric constant at X-band (9.5~GHz) is $\epsilon_r = 63 - i 26.46$. In the case of ICE, the dielectric constant at X-band is $\epsilon_r = 3.2 - i 0.00128$
+    \item \textbf{Frq}: The real part of the solved frequency.
+\end{itemize}{}
+\lstinputlisting[linerange=1-16]{Kapitel/Appendix/Signal-water.clc}
+\newpage
+
+\subsection*{Power losses}
+The following power losses are being defined
+\begin{itemize}
+    \item \textbf{Pls}: Losses associated with the sample. Uses \textit{ImDieSam} as $\epsilon''$.
+    \item \textbf{Plw}: Requires the user to select all faces of objects that are metal and create \textit{FaceList1} (Modeler$\xrightarrow{}$List$\xrightarrow{}$Create$\xrightarrow{}$Face List).
+    \item \textbf{Ple}: Losses associated with the dielectric holder. Uses \textit{ImDieHold} as $\epsilon''$.
+\end{itemize}{}
+\lstinputlisting[linerange=59-123]{Kapitel/Appendix/Signal-water.clc}
+\newpage
+
+\subsection*{Magneic Fields}
+\lstinputlisting[linerange=17-58]{Kapitel/Appendix/Signal-water.clc}
+\newpage
+
+
+\subsection*{Signal}
+\lstinputlisting[linerange=124-164]{Kapitel/Appendix/Signal-water.clc}
+\newpage
+
+\subsection*{Resonator Efficiency}
+\lstinputlisting[linerange=165-203]{Kapitel/Appendix/Signal-water.clc}
