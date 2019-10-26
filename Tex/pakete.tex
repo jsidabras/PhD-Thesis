@@ -57,6 +57,8 @@
    \else #1\fi\endgroup}
 \makeatother
 
+\usepackage{enumitem}
+
 \usepackage{chapterbib}
 \makeatletter
 \let\@cb@insertprefix\relax
@@ -86,7 +88,7 @@
 \DeclarePairedDelimiter\ket{\lvert}{\rangle}
 \DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
-\newcommand{\vectu}[2]{\boldsymbol{#1}_{#2}}
+\newcommand{\vectu}[2]{\textbf{#1}\boldsymbol{_{#2}}}
 \newcommand{\vectop}[1]{\widehat{\boldsymbol{#1}}}
 \newcommand{\ii}{\mathrm{i}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
@@ -100,6 +102,7 @@
 
 \hyphenpenalty=8000
 \usepackage[shortcuts]{extdash}
+
 
 %------------------------ENDE-----------------------------------
 \usepackage[pdfborder={0 0 0},hypertexnames=true,colorlinks=true, linkcolor = {Black}, citecolor = {Black}]{hyperref} %am Ende 
