@@ -2,7 +2,7 @@
 \usepackage[toc,page,title,header]{appendix}
 
 %--------------------------B------------------------------------
-\usepackage[main=english,ngerman]{babel}
+%\usepackage[main=english,ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -60,13 +60,15 @@
 \usepackage{enumitem}
 
 \usepackage{chapterbib}
+
 \makeatletter
 \let\@cb@insertprefix\relax
 \def\@biblabel#1{[\@CitationPrefix#1]}
 \def\NAT@open{[\@CitationPrefix}
-%%% Uncomment if you change the bibliography heading/title
 
 \makeatother
+\CitationPrefix{\thechapter.}
+
 \usepackage[footskip=0pt, bottom=2.5cm]{geometry}
 % \geometry{margin=0.6in}
 % \usepackage{lineno}
