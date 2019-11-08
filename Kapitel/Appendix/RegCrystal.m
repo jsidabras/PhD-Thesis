@@ -1,4 +1,6 @@
 % spectra from single crystal rotation
+% solution requires EasySpin 5.2.25 
+% Written by: Jason W. Sidabras
 %===========================================
 
 clear, clf
@@ -13,6 +15,7 @@ Exp.Harmonic = 0;
 
 Sys.g = [2.1 2.04 1.99];
 
+% Values that are solved and used in this work.
 vals = [-9.9905 -104.3957 179.1777 -143.6922 -89.5230 139.4536 -5.1538 -6.9590 -3.3403]; % 0.0652
  BestVals = struct('coria', vals(1),'corib', vals(2),'coric', vals(3),...
       'gframea1', vals(4),'gframeb1', vals(5),'gframec1', vals(6),...
@@ -70,6 +73,7 @@ Vary.gframea2 = 7.5;
 Vary.gframeb2 = 7.5;
 Vary.gframec2 = 7.5;
 
+% used to check the variation of the angle. Not used in published work.
 Sys.pmang = zeros(1,18)
 % Vary.pmang = ones(1,18)*3.5
 

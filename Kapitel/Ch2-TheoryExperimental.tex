@@ -187,7 +187,7 @@ The hyperfine sublevel correlation (HYSCORE) experiments add an additional pulse
 Although HYSCORE is a useful tool for visualization and human-aided analysis, a set of ESEEM spectra are typically simulated for fitting and following orientation dependant single crystal data to obtain the full hyperfine-tensor. \cite{Shane1994SingleCrystalESEEM}
 
 \subsubsection*{Nutation.}
-The nutation experiment is performed at a field position of maximum EPR signal and a perturbation pulse is added to the electron spin-echo experiment such that a pulse sequence of ${t_1\text{-pulse}\!-\!\text{T}\!-\!\pi/2\!-\!\tau\!-\!\pi}$ if formed. The $t_1$-pulse is varied resulting in a perturbation on the electron spin echo experiment at a fixed field. The variation is a function of the tip angle of the spin-system and can be related to the magnetic field incident on the sample. In resonators with inhomogeneous fields, the average of the magnetic field is measured and is directly comparable to $\Lambda_{ave}$ of Eqn.~\ref{eq:lamave}.
+The nutation experiment is performed at a field position of maximum EPR signal and a perturbation pulse is added to the electron spin-echo experiment such that a pulse sequence of ${t_1\text{-pulse}\!-\!\text{T}\!-\!\pi/2\!-\!\tau\!-\!\pi}$ if formed. The $t_1$-pulse is varied resulting in a perturbation on the electron spin echo experiment at a fixed field. The variation is a function of the tip angle of the spin-system and can be related to the magnetic field incident on the sample. In resonators with inhomogeneous fields, the average of the magnetic field is measured and is directly comparable to $\Lambda_{ave}$ of Eqn.~\ref{ch2-eq:lamave}.
 
 \section{Crystal Orientations and Molecular Frames}
 In this section, a basic understanding of crystal orientations and how to relate the frames to the EPR parameters is discussed. 
@@ -285,7 +285,7 @@ Ansys HFSS employs ``driven-mode'' and ``eigenmode'' solving domains. The ``eige
 The ``driven-mode'' solves the non-homogeneous Maxwell's equations. Practically, one must devise a coupling system in ``driven-mode'' and, in this work, impedance matching considerations are implemented to maximize power transfer to the resonator. The ``driven-mode'' provides outputs similar to a vector network analyzer and is typically normalized to an input power of 1~W. 
 
 \paragraph*{Signal Calculations and Resonator Comparisons.}
-A method to obtain EPR signal has been formulated and is reproduced here. \cite{misrabook} This method uses the fields calculated in Ansys HFSS, accessed by the ``Field Calculator'', to determine a normalized EPR signal under saturating or nonsaturating conditions. This calculation can be performed using eigenmode or driven-mode methods and the scripts for Ansys HFSS are found in Appendix~A. 
+A method to obtain EPR signal has been formulated and is reproduced here. \cite{misrabook} This method uses the fields calculated in Ansys HFSS, accessed by the ``Field Calculator'', to determine a normalized EPR signal under saturating or nonsaturating conditions. This calculation can be performed using eigenmode or driven-mode methods and the scripts for Ansys HFSS are found in Appendix~B.\footnote{All codes and HFSS files can be found at https://github.com/jsidabras/HFSSTutorial/.} 
 
 For a matched reflection cavity and a voltage-sensitive detector, Feher expressed the microwave EPR signal as
 \begin{equation}
@@ -305,7 +305,7 @@ where ${\textbf H}_1$ is the microwave magnetic field in all space ($V$).
 
 The filling factor is defined as the ratio of the magnetic field energy in the sample that gives rise to an EPR signal to the magnetic field energy in all space. This can be calculated as
 \begin{equation}
- \eta = \frac{\mu_0 \int {\mathbf H}_{1r} \cdot {\mathbf H}_{1r}^* dV_s}{\int {\mathbf H}_1 \cdot {\mathbf H}_1^* dV}, \label{eq-2:filling}
+ \eta = \frac{\int {\mathbf H}_{1r} \cdot {\mathbf H}_{1r}^* dV_s}{\int {\mathbf H}_1 \cdot {\mathbf H}_1^* dV}, \label{eq-2:filling}
 \end{equation}
 where ${\textbf H}_{1r}$ is one component of the clockwise (or counter clockwise) rotational component of the linearly polarized ${\textbf H}_1$ field perpendicular to the static magnetic field in the sample volume ($V_s$). \cite{jackson1975classical} In magnetic resonance, the spin system is coupled to either the right-handed or left-handed (clockwise or counter clockwise) polarization of the magnetic field. 
 
@@ -331,7 +331,7 @@ where the imaginary part of the dielectric permittivity ($\epsilon_r = \epsilon_
 \begin{equation}
     P_l = P_{lw} + \sum_{i=1}^n P_{ld_i} \qquad \text{[W].}
 \end{equation}
-The power loss in the system for the sample, resonator walls, and sample holder end sections is defined as $P_s$, $P_w$, and $P_e$, respectively, in the scripts of Appendix~A. The calculations for $P_s$ and $P_e$ rely on the constants \textit{ImDiSam} and \textit{ImDiHold} which are set to the imaginary part of the relative permittivity constant $\epsilon_r''$.
+The power loss in the system for the sample, resonator walls, and sample holder end sections is defined as $P_s$, $P_w$, and $P_e$, respectively, in the scripts of Appendix~B. The calculations for $P_s$ and $P_e$ rely on the constants \textit{ImDiSam} and \textit{ImDiHold} which are set to the imaginary part of the relative permittivity constant $\epsilon_r''$.
 
 From Eqn.~\ref{ch2-fehereq} the signal can be calculated by substituting the appropriate equations. Two EPR signal conditions can be calculated: signal unsaturable (Su; Unsat.) and signal saturable (Ss; Sat.). In continuous-wave  experiments, signal unsaturable is defined as the EPR signal at constant incident power, while signal saturable is defined as the EPR signal at constant magnetic field at the sample. For pulse experiments, signal saturable is proportional to the EPR signal. A saturable sample can be calculated by normalizing to the magnetic field and computing
 \begin{equation}
@@ -343,15 +343,21 @@ The unsaturable sample can be calculated by normalizing to the power and computi
 \end{equation}{}
 The efficiency parameter $\Lambda_{max}$, as introduced by Hyde {\em et al.} \cite{hydehoff}, is defined as
 \begin{equation}
-    \Lambda_{max} = \frac{1}{10}\frac{\mu_0 \text{Max}|\mathbf{H_{1r}}|}{P_l^{1/2}} \quad \text{[mT/W}^{1/2}],
+    \Lambda_{max} = \frac{1}{10}\frac{\mu_0 \text{Max}|\mathbf{H_{1r}}|}{P_l^{1/2}} \quad \text{[mT/W}^{1/2}], \label{ch2-eq:lammax}
 \end{equation}
 where Max$|\mathbf{H_{1r}}|$ is the maximum magnitude of $\mathbf{H_{1r}}$ in the sample (typically in the center of the cavity) and is assumed to be uniform over the sample volume. \cite{hydehoff} The scalar converts Gauss into milliTesla. 
 
 In order to better access the resonator efficiency when the magnetic field is not uniform, we calculate an average over the sample volume, 
 \begin{equation}
-    \Lambda_{ave} = \frac{1}{10}\frac{\mu_0 \int \sqrt{\mathbf{H_{1r}} \cdot \mathbf{H_{1r}^*}} dV_s}{P_l^{1/2} V_t} \quad [mT/W^{1/2}], \label{eq:lamave}
+    \Lambda_{ave} = \frac{1}{10}\frac{\mu_0 \int \sqrt{\mathbf{H_{1r}} \cdot \mathbf{H_{1r}^*}} dV_s}{P_l^{1/2} V_t} \quad [mT/W^{1/2}], \label{ch2-eq:lamave}
 \end{equation}
-where $V_t$ is the total volume of the sample. The average resonator efficiency, which takes into account the magnetic field profile along the sample volume, is the measurable value when a nutation experiment is performed. The calculator files can be found in Appendix~1.
+where $V_t$ is the total volume of the sample. The average resonator efficiency, which takes into account the magnetic field profile along the sample volume, is the measurable value when a nutation experiment is performed. The calculator files can be found in Appendix~B.
+
+Finally, the $\Lambda_{ave}$-to-$\Lambda_{max}$ ratio can be used as a metric to the uniformity of the resonator. \cite{UFLGR2017} In this work we defined the B$_1$ profile uniformity as 
+\begin{equation}
+    \Delta B_1 = \frac{\left| \Lambda_{max} - \Lambda_{ave} \right|}{\Lambda_{max}} \times 100\%.
+\end{equation}
+
 
 
 {\renewcommand{\bibsection}{\clearpage\section*{\bibname}\markboth{\bibname}{\bibname}}
