@@ -49,26 +49,37 @@
   \endgroup
 }
 
-\usepackage[sectionbib, square, super, numbers, comma, sort&compress]{natbib}
+\usepackage[sectionbib, square, super, comma, sort&compress]{natbib}
+\usepackage{chapterbib}
 
 \makeatletter
 \renewcommand\NAT@citesuper[3]{\ifNAT@swa
 \if*#2*\else#2\NAT@spacechar\fi
 \unskip\kern\p@\textsuperscript{\NAT@@open#1\if*#3*\else,\NAT@spacechar#3\fi\NAT@@close}%
    \else #1\fi\endgroup}
-\makeatother
 
-\usepackage{enumitem}
-
-\usepackage{chapterbib}
-
-\makeatletter
 \let\@cb@insertprefix\relax
-\def\@biblabel#1{[\@CitationPrefix#1]}
+%\def\@biblabel#1{[\@CitationPrefix#1]}
 \def\NAT@open{[\@CitationPrefix}
 
 \makeatother
 \CitationPrefix{\thechapter.}
+
+
+
+\usepackage{enumitem}
+
+
+
+%\makeatletter
+%\let\@cb@insertprefix\relax
+%\def\@biblabel#1{[\@CitationPrefix#1]}
+%\def\NAT@open{[\@CitationPrefix}
+
+%\makeatother
+
+
+
 
 \usepackage[footskip=0pt, bottom=2.5cm]{geometry}
 % \geometry{margin=0.6in}
@@ -106,6 +117,7 @@
 \hyphenpenalty=8000
 \usepackage[shortcuts]{extdash}
 
+\usepackage{wrapfig}
 
 %------------------------ENDE-----------------------------------
 \usepackage[pdfborder={0 0 0},hypertexnames=true,colorlinks=true, linkcolor = {Black}, citecolor = {Black}]{hyperref} %am Ende 
