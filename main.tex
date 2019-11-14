@@ -95,8 +95,8 @@ See Appendix A for full \textit{Curriculum Vitae}.
 \newpage
 \chapter*{Acronyms}
 \addcontentsline{toc}{chapter}{Acronyms}
-\begin{table}[ht]
-\vspace{-0.5em}
+\begin{table}[ht!]
+\small
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{ll}
 \textbf{Acronym}     & \textbf{Description} \\ \hline \hline
@@ -117,13 +117,20 @@ Units:          & \\ \hline
 GHz             & 10$^9$ Hz \\
 G               & Gauss \\
 mT              & miliTessla (10~G) \\
-V               & Volts \\
-A/m             & Amperes per meter \\
-mW              & 10$^{-3}$ Watts \\ \hline \hline
+V               & Volt \\
+A/m             & Ampere per meter \\
+mW              & 10$^{-3}$ Watt \\ \hline \hline
 \rowcolor{LightCyan}
 Resonators:     & \\ \hline
 \textbf{H}$_0$  & static magnetic field \\
 \textbf{H}$_1$  & microwave magnetic field \\
+\textbf{B}$_0$  & static magnetic flux; $\textbf{B}_0 = \mu_0 \textbf{H}_0$ \\
+\textbf{B}$_1$  & microwave magnetic flux; $\textbf{B}_1 = \mu_0 \mu_r \textbf{H}_1$\\
+$\epsilon_0$    & free-space permittivity; $8.854\times10^{-12}$ Farad per meter\\
+$\epsilon_r$    & dielectric permittivity; $\epsilon = \epsilon_0 \epsilon_r$; $\epsilon_r = \epsilon_r' + i \epsilon_r''$ \\
+$\mu_0$         & free-space permeability; $4 \pi \times10^{-7}$ Henry per meter\\
+$\mu_r$         & dielectric permeability; $\mu = \mu_0 \mu_r$; $\mu_r = 1 + M$ \\
+$\mathbf{M}_0$  & time-varying magnetic suceptibility vector; $M = |\mathbf{M}_0|$ \\
 X-band          & 8-12~GHz; 9.5~GHz nominal \\ 
 Q-band          & 27-40~GHz; 34~GHz nominal \\ 
 W-band          & 75–110~GHz; 94~GHz nominal \\  
@@ -143,10 +150,10 @@ LiPC            & lithium phthalocyanine \\
 CpI             & [FeFe]-hydrogenase from \textit{Clostridium pasteurianum} \\
 BBY particles   & Berthold, Babcock, and Yocum sample preparation (Ref.~5.23) $\qquad$\\
 Y$_D^\bullet$   & photosystem II tyrosine D radical \\ \hline \hline
-\end{tabular}\newpage
+\end{tabular}
 \rowcolors{2}{}{}
 \end{table}
-\newpage
+\vfill	
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,7 +178,7 @@ Y$_D^\bullet$   & photosystem II tyrosine D radical \\ \hline \hline
 \include{Kapitel/AppendixB-FEM}
 \include{Kapitel/AppendixC-MathamaticaCode}
 \include{Kapitel/AppendixD-MatLabCode}
-%\include{Kapitel/AppendixE-ESEEM}
+\include{Kapitel/AppendixE-ESEEM}
 \end{appendices}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
