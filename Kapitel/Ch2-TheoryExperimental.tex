@@ -101,9 +101,9 @@ where the zero-field splitting tensor $\mathbf{D}$ is a symmetric interaction fr
 \section{On the use of Magnetic Field and Flux Density}
 The EPR literature uses the magnetic field $\mathbf{H}$ and magnetic flux density $\mathbf{B}$ interchangeably as ``magnetic field''. It is somewhat disingenuous to state that the relationship of the magnetic field and magnetic flux density is simply related by the free-space permeability $\mu_0$. The focus of this section is to define the usage in this dissertation by following the nomenclature of Jackson of Ref.~[2.\kern-0.4em\citenum{jackson1975classical}] so that 
 \begin{equation}
-    \mathbf{B} = \mu_0(\mathbf{M} + \mathbf{H}),
+    \mathbf{B} = \mu_0(\mathbf{M_0} + \mathbf{H}),
 \end{equation}
-where the SI units for $\mathbf{B}$ is measured in Tesla, while $\mathbf{H}$ is calculated in Ampere per meter. The magnetic susceptibility $\mathbf{M}$ becomes relevant when the time-varying magnetic flux density $\mathbf{B}$ is incident on a material, such as a sample. For brevity, the time-varying magnetic flux density is defined as
+where the SI units for $\mathbf{B}$ is measured in Tesla, while $\mathbf{H}$ is calculated in Ampere per meter. The magnetic susceptibility $\mathbf{M_0}$ becomes relevant when the time-varying magnetic flux density $\mathbf{B}$ is incident on a material, such as a sample. For brevity, the time-varying magnetic flux density is defined as
 \begin{equation}
     \mathbf{B}_1 = \mathbf{B} e^{-i\omega t}
 \end{equation}
@@ -225,9 +225,9 @@ The ``driven-mode'' solves the non-homogeneous Maxwell's equations. Practically,
 \paragraph*{Signal Calculations and Resonator Comparisons.}
 A method to obtain the EPR signal has been formulated and is reproduced here. \cite{misrabook} This method uses the fields calculated in Ansys HFSS, accessed by the ``Field Calculator'', to determine a normalized EPR signal under saturating or nonsaturating conditions. This calculation can be performed using eigenmode or driven-mode methods and the scripts for Ansys HFSS are found in Appendix~B.\footnote{All codes and HFSS files can be found at https://github.com/jsidabras/HFSSTutorial/.} 
 
-\begin{wrapfigure}{R}{4cm}
+\begin{wrapfigure}{R}{3.5cm}
 \centering
-\includegraphics[width=4cm]{Kapitel/Appendix/HFSSTutQR.eps}
+\includegraphics[width=3.5cm]{Kapitel/Appendix/HFSSTutQR.eps}
 \end{wrapfigure}
 
 For a matched reflection cavity and a voltage-sensitive detector, Feher expressed the microwave EPR signal as

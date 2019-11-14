@@ -1,4 +1,7 @@
-\chapter[MatLab Code]{MatLab Code}
+\chapter[Matlab Code]{Matlab Code}
+
+The Matlab code presented in this section was used to determine the $g$-tensor angular dependence for the data obtain in Chapter 6. The \textit{esfit} function in Easyspin takes an array of collected data and compares it to an array of simulated data based on the parameters in the setup. In this dissertation, a custom function for the \textit{esfit} function was written to speed up the simulations by using the parallel toolkit of Matlab. The \textit{esfit} function returns a set of best solved values (``BestVals'') with a calculated error function. Finally, the ``BestVals'' are plotted as a Resonance Roadmap on top of the collected data.
+
  	\definecolor{light-gray}{gray}{0.90}
 \lstset{language=Matlab,%
     %basicstyle=\color{red},
