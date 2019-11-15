@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,openany,twoside,english,titlepage=true]{scrbook}
+\documentclass[11pt,DIV=14,a4paper,openany,twoside=semi,english,titlepage=true,BCOR=1cm]{scrbook}
 %\enabledeprecatedfontcommands
 \input{Tex/pakete}
 %\input{Tex/literatur}
@@ -40,12 +40,14 @@ afterskip=1cm]{chapter}
 
 \begin{document}
 \raggedbottom
-\pagenumbering{Roman}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %							Titelseite
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
+
+\includepdf[pages=-]{Kapitel/AntragPromotion.pdf}
+\pagenumbering{Roman}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,7 +56,6 @@ afterskip=1cm]{chapter}
 \input{Kapitel/Abstract_EN.tex}
 \input{Kapitel/Abstract_DE.tex}
 \input{Kapitel/Danksagung.tex}
-
 \newpage
 
 \chapter*{List of Publications}
