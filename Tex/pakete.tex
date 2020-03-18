@@ -50,7 +50,7 @@
 }
 
 \usepackage[sectionbib, square, super, comma, sort&compress]{natbib}
-\usepackage{chapterbib}
+\usepackage[sectionbib]{chapterbib}
 
 \makeatletter
 \renewcommand\NAT@citesuper[3]{\ifNAT@swa
@@ -67,12 +67,12 @@
 
 \usepackage{enumitem}
 
-%\makeatletter
-%\let\@cb@insertprefix\relax
-%\def\@biblabel#1{[\@CitationPrefix#1]}
-%\def\NAT@open{[\@CitationPrefix}
+\makeatletter
+\let\@cb@insertprefix\relax
+\def\@biblabel#1{[\@CitationPrefix#1]}
+\def\NAT@open{[\@CitationPrefix}
 
-%\makeatother
+\makeatother
 
 
 \usepackage{layout}

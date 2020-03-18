@@ -16,7 +16,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="RotationBigPhD.svg">
+   sodipodi:docname="RotationBigPhD.svg"
+   inkscape:export-filename="C:\Users\sidabras\Desktop\FeFeHydrogenase_gTensor.png"
+   inkscape:export-xdpi="149.96159"
+   inkscape:export-ydpi="149.96159">
   <defs
      id="defs2">
     <marker
@@ -606,8 +609,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.5588102"
-     inkscape:cx="15.204235"
-     inkscape:cy="352.56027"
+     inkscape:cx="-57.284699"
+     inkscape:cy="443.51481"
      inkscape:document-units="mm"
      inkscape:current-layer="g3812"
      showgrid="false"
@@ -1114,5 +1117,5 @@
            height="920.50586"
            x="224.97733"
            y="-153.6817" /></flowRegion><flowPara
-         id="flowPara3734"></flowPara></flowRoot>  </g>
+         id="flowPara3734" /></flowRoot>  </g>
 </svg>

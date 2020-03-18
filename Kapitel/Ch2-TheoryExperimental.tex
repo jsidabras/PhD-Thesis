@@ -15,7 +15,7 @@ The spin Hamiltonian comprises of the superposition of the magnetic and electric
 \begin{equation}
     \hat{\mathcal{H}} = \hat{\mathcal{H}}_{ze} + \hat{\mathcal{H}}_{hfi} + \hat{\mathcal{H}}_{nz} + \hat{\mathcal{H}}_{nqi} + \hat{\mathcal{H}}_{zfs},
 \end{equation}
-where the electron Zeeman interaction $\hat{\mathcal{H}}_{ze}$, the hyperfine interaction $\hat{\mathcal{H}}_{hfi}$, the nuclear Zeeman interaction $\hat{\mathcal{H}}_{nz}$, and, for nuclei with $I > 1/2$, the electric-nuclear quadrupole interactions $\hat{\mathcal{H}}_{nqi}$. The zero-field splitting term $ \hat{\mathcal{H}}_{zfs}$, is characterized by an electron-spin magnetization without an applied static magnetic field. 
+where the electron Zeeman interaction $\hat{\mathcal{H}}_{ze}$, the hyperfine interaction $\hat{\mathcal{H}}_{hfi}$, the nuclear Zeeman interaction $\hat{\mathcal{H}}_{nz}$, and, for nuclei with $I > 1/2$, the electric-nuclear quadrupole interactions $\hat{\mathcal{H}}_{nqi}$. The zero-field splitting term $ \hat{\mathcal{H}}_{zfs}$, is characterized by energy differences of the degenerate states without an applied static magnetic field. 
 
 \begin{figure}[ht]
  \centering
@@ -24,7 +24,7 @@ where the electron Zeeman interaction $\hat{\mathcal{H}}_{ze}$, the hyperfine in
  \label{fig:EPREnergy}
 \end{figure}
 
-In this formulation, the static magnetic field $\mathbf{B}_0$ is assumed to be along the $z$ axis and denote the transpose of a tensor with a `T'. In this work, it is assumed that the electron Zeeman interaction is the largest interaction followed by the hyperfine interaction, nuclear Zeeman, electric quadrupole, and zero-field splitting.
+In this formulation, the static magnetic field $\mathbf{B}_0$ is assumed to be along the $z$ axis and denote the transpose of a tensor with a `T'. In this work, it is assumed that the electron Zeeman interaction is the largest interaction followed by the hyperfine interaction, nuclear Zeeman, electric quadrupole. In cases with zero-field splitting, the Zeeman interaction is the second largest.
 
 \subsubsection*{Zeeman interactions}
 When a static magnetic field is applied to a molecular system with angular momentum, the angular momentum aligns in such a way that a Boltzmann distribution is formed. This removes the degeneracy of the electron magnetization $\mathbf{M}_s$ manifold, splitting the energy levels, illustrated in Fig.~\ref{fig:EPREnergy} as the initial splitting. For an electron spin of $S = 1/2$, the initial energy levels are split into $\mathbf{M}_s = \ket{+\frac{1}{2}}, \ket{-\frac{1}{2}}$ for spin-up and spin-down, respectively. Both the electron $\hat{\mathcal{H}}_{ze}$ and nuclear $\hat{\mathcal{H}}_{nz}$ Zeeman interactions occur when a static magnetic field $\mathbf{B}_z$ is applied.
@@ -35,13 +35,13 @@ The electron Zeeman interaction is defined by
 \end{equation*}
 where $\beta_e$ is the Bohr magneton, the transpose of the static magnetic field $\mathbf{B}_z^{\text{T}}$, the vector operator $\mathbf{S} = [\mathbf{S}_x \; \mathbf{S}_y \; \mathbf{S}_z]$ is the spin angular momentum of the electron. 
 
-A free electron in a vacuum has an isotropic spin with angular momentum. It is then the introduction of the electron with other atoms and how those atoms distribute the electron that gives rise to different components of the spin Hamiltonian.\cite{abragam2012electron,harriman1978theoretical} This ``pushing'' and ``pulling'' of the electron by spin-orbit coupling leads to anisotropic $\mathbf{g}$. The matrix $\mathbf{g}$ is what is known as the $g$-tensor and is a spatial distribution of the angular momentum of the electron. The $g$-tensor is typically made diagonal and discussed in terms of the $g_x$, $g_y$, and $g_z$ principal components, where the magnitude is denoted as $g_{iso}$. EPR resonance occurs as a result of the incident energy is matched by the energy difference of the electron Zeeman levels. 
+An unpaired electron in a vacuum has an isotropic spin with angular momentum. It is then the introduction of the electron with other atoms and how those atoms distribute the electron that gives rise to different components of the spin Hamiltonian.\cite{abragam2012electron,harriman1978theoretical} This ``pushing'' and ``pulling'' of the electron by spin-orbit coupling leads to anisotropic $\mathbf{g}$. The matrix $\mathbf{g}$ is what is known as the $g$-tensor and is a spatial distribution of the angular momentum of the electron. The $g$-tensor is typically made diagonal and discussed in terms of the $g_x$, $g_y$, and $g_z$ principal components, where the magnitude is denoted as $g_{iso}$. EPR resonance occurs as a result of the incident energy being matched by the energy difference of the electron Zeeman levels. 
 
 Deviations from a free-electron can be used to obtain information on the local environment. Since these processes are non-cooperative, we can separate the free-electron from all the other contributions
 \begin{equation*}
     \mathbf{g} = g_e \mathbf{1} + \Delta \mathbf{g},
 \end{equation*}
-where $\mathbf{1}$ is the identity matrix and $\Delta \mathbf{g}$ includes isotropic terms as well as second-order spin-orbit coupling terms. The interaction between the electron spin and the atomic orbitals of the molecule arise due to the magnetic moment of the electron. \cite{griffith1964theory} The electron Zeeman $\hat{\mathcal{H}}_{ze}$ interaction is then a perturbation of the free electron in the ground state. 
+where $\mathbf{1}$ is the identity matrix and $\Delta \mathbf{g}$ includes isotropic atomic interaction terms as well as second-order spin-orbit coupling terms. The interaction between the electron spin and the atomic orbitals of the molecule arise due to the magnetic moment of the electron. \cite{griffith1964theory} The electron Zeeman $\hat{\mathcal{H}}_{ze}$ interaction is then a perturbation of the free electron in the ground state. 
 
 For systems when the electron interacts with intrinsic or surrounding nuclei with a nuclear spin $I_k$, the Nuclear Zeeman effect is added to $\hat{\mathcal{H}}$ as
 \begin{equation*}
@@ -50,21 +50,21 @@ For systems when the electron interacts with intrinsic or surrounding nuclei wit
 where $\beta_n$ is the nuclear magneton, the transpose of the static magnetic field $\mathbf{B}_z$ is marked with a `T', the vector operator $\mathbf{I}_k = [\mathbf{I}_x \; \mathbf{I}_y \; \mathbf{I}_z]$ is the spin angular momentum of the nuclei. The summation of the nuclear contributions are represented by the index $k$ for each $m$ nucleus that interacts with the electron. Each nucleus has a distinct nuclear $g_{n,k}$-value and angular momentum $\mathbf{I}_k$ and is assumed to be isotropic. The visualization of the nuclear Zeeman effect is illustrated as a perturbation on the electron-nuclear hyperfine interaction shown in Fig.~\ref{fig:EPREnergy}.
 
 \subsubsection*{Nuclear-Electron Interactions}
-Since EPR is the measurement of how a valence electron interacts with the surrounding environment, information on the surrounding nuclei is possible if these nuclei have an inherent nuclear spin $\mathbf{I}$. Such nuclei include, for example, $^1$H, $^2$H, $^{14}$N, $^{15}$N, $^{57}$Fe, and $^{13}$C, which can be synthetically incorporated into the system to gain more information than the natural abundance of some of the atoms. \cite{Doorslaer2007,Harmer2009,CUTSAIL20151370}
+Since EPR is the measurement of how a valence (unpaired) electron interacts with the surrounding environment, information on the surrounding nuclei is possible if these nuclei have an inherent nuclear spin $\mathbf{I}$. Such nuclei include, for example, $^1$H, $^2$H, $^{14}$N, $^{15}$N, $^{57}$Fe, and $^{13}$C, which can be synthetically incorporated into the system to gain more information than the natural abundance of some of the atoms. \cite{Doorslaer2007,Harmer2009,CUTSAIL20151370}
 
 \paragraph*{Hyperfine Interactions}
 The hyperfine interactions are defined as the coupling between the paramagnetic site and the surrounding nuclei. This can be broken up into two distinct parts, the isotropic Fermi contact interaction, $a_{iso}$, and the electron-nucleus magnetic dipole-dipole coupling. The hyperfine interactions can be expressed as
 \begin{equation}
     \hat{\mathcal{H}}_{hfi} = \mathbf{S}^{\text{T}} \cdot \mathbf{A} \cdot \mathbf{I}_k = a_{iso}\mathbf{S}^{\text{T}} \cdot \mathbf{I}_k + \mathbf{S}^{\text{T}} \cdot \mathbf{T} \cdot \mathbf{I}_k \label{eq-2:hfi}
 \end{equation}
-for each the interacting nuclei $k$, there exists such an interaction. The Fermi contact describes the delocalization of the electron to the surrounding nuclei. At a sufficient distance, the spacial tensor $\mathbf{T}$ can be described by
+for each the interacting nuclei $k$, there exists such an interaction. The Fermi contact describes the delocalization of the electron to the surrounding nuclei. At a sufficient distance (>0.26~nm), the spacial tensor $\mathbf{T}$ can be described by
 \begin{equation}
     \mathbf{T} = \frac{\mu_0}{4 \pi \hbar}\frac{1}{r^3} g_n \beta_n \beta_e g_i (3r_i r_j - \delta_{ij}) \qquad (i,j = x,y,z), \label{eq-2:hfiT}
 \end{equation}
-where the $x$, $y$, and $z$-components of the hyperfine tensor are treated independently. Illustrated in Fig.~\ref{fig:EPREnergy} is the nuclear-electron hyperfine interaction assuming only the isotropic component of interaction. In frozen solution, this isotropic component is broadened by the distribution of the frequency components defined by $\mathbf{T}$. Only single-crystal EPR spectroscopy can truly obtain the full hyperfine-tensor information for systems with anisotropic hyperfine interactions $\mathbf{T}$ by measuring the total hyperfine interaction $\mathbf{A}$.
+where the $x$, $y$, and $z$-components of the hyperfine tensor are treated independently.\cite{Doorslaer2007} Illustrated in Fig.~\ref{fig:EPREnergy} is the nuclear-electron hyperfine interaction assuming only the isotropic component of interaction. In frozen solution, this isotropic component is broadened by the distribution of the frequency components defined by $\mathbf{T}$. Only single-crystal EPR spectroscopy can truly obtain the full hyperfine-tensor information for systems with anisotropic hyperfine interactions $\mathbf{T}$ by measuring the total hyperfine interaction $\mathbf{A}$.
 
 \paragraph*{Electric-Nuclear Quadrupole Interactions}
-The electric-nuclear quadrupole interaction only exists for nuclei with a spin $I$ greater than 1/2 and is caused by electric field gradients due to the interaction of the electron with the second moment of the nuclear angular momentum. This can be rationalized since the nuclear Zeeman interaction is assumed to be isotropic, while the second moment (gradient) is a measurement of the deviation from isotropic angular momentum. One can learn about the nature of the chemical bonding and the delocalization of the electron if the quadrupole moment $Q$ is known.\cite{quadref} 
+The electric-nuclear quadrupole interaction only exists for nuclei with a spin $I$ greater than 1/2 and is caused by electric field gradients due to the interaction of the electron with the second moment of the nuclear angular momentum. This can be rationalized since the nuclear Zeeman interaction is assumed to be isotropic, while the second moment (gradient) is a measurement of the deviation from isotropic angular momentum.\cite{griffith1964theory} One can learn about the nature of the chemical bonding and the delocalization of the electron if the interaction between the quadrupole moment $Q$ and electron is known.\cite{quadref} 
 
 The electric-nuclear quadrupole interaction is described by the Hamiltonian
 \begin{equation}
@@ -92,11 +92,11 @@ where $a$ is the hyperfine coupling at the nuclei of interest. \cite{Doorslaer20
 
 \subsubsection*{Multiple Electron Interactions}
 \paragraph*{Zero-field Splitting}
-For electron with spin greater than 1/2 ($S > 1/2$) or an effective spin of multiple electrons with strong coupling greater than 1/2 ($S_{eff} > 1/2$), there exists an internal interaction that splits the energy levels of the ground state with no applied external field. This interaction, named zero-field splitting, is defined as 
+For many unpaired electrons with strong coupling, an effective spin greater than 1/2 ($S_{eff} > 1/2$) is formed. When this occurs, there exists an internal interaction that splits the energy levels of the ground state with no applied external field. This interaction, named zero-field splitting, is defined as 
 \begin{equation}
     \hat{\mathcal{H}}_{zfs} = \mathbf{S}^{\text{T} } \cdot \mathbf{D} \cdot \mathbf{S}
 \end{equation}
-where the zero-field splitting tensor $\mathbf{D}$ is a symmetric interaction from close spin-orbital coupling between two or more electrons. The zero-field splitting is especially important in molecular magnets, where it is the direct characterization of the magnetization caused by the interactions of electrons as magnetic monopoles. \cite{barra1998high} With very large values of $D$, the EPR transistion only become excited with high-field--high-frequency EPR methods. \cite{Nehrkorn13} 
+where the zero-field splitting tensor $\mathbf{D}$ is a symmetric interaction from close spin-orbital coupling between two or more electrons. The zero-field splitting is especially important in molecular magnets, where it is the direct characterization of the magnetization caused by the interactions of electrons as magnetic monopoles. \cite{barra1998high} With very large values of $D$, the EPR transition energies can only become excited with high-field--high-frequency EPR methods. \cite{Nehrkorn13} 
 
 \section{On the use of Magnetic Field and Flux Density}
 The EPR literature uses the magnetic field $\mathbf{H}$ and magnetic flux density $\mathbf{B}$ interchangeably as ``magnetic field''. It is somewhat disingenuous to state that the relationship of the magnetic field and magnetic flux density is simply related by the free-space permeability $\mu_0$. The focus of this section is to define the usage in this dissertation by following the nomenclature of Jackson of Ref.~[2.\kern-0.4em\citenum{jackson1975classical}] so that 
@@ -107,13 +107,13 @@ where the SI units for $\mathbf{B}$ is measured in Tesla, while $\mathbf{H}$ is 
 \begin{equation}
     \mathbf{B}_1 = \mathbf{B} e^{-i\omega t}
 \end{equation}
-where $\omega$ is the frequency of interest (radians per second). It is the magnetic flux density that is incident on the sample defined by the magnetic field profile of the microwave resonator. As anticipated, the magnetic susceptibility is material-specific and is proportional to the magnetic moment of the material. In a macroscopic sense, it is the perturbation of this magnetic moment that is measured in EPR. For experimental methods, this is described in detail in Section~2.5 and used extensively in the formulation of Chapter~4. The magnetic susceptibility has the units of Ampere per meter.
+where $\omega$ is the frequency of interest (radians per second). It is the magnetic flux density that is incident on the sample defined by the magnetic field profile of the microwave resonator. As anticipated, the magnetic susceptibility is material-specific and is proportional to the magnetic moment of the material. In a macroscopic sense, it is the perturbation of this magnetic moment that is measured in EPR. For experimental methods, this is described in detail in Section~2.5 and used extensively in the formulation of Chapter~4. 
 
-From Maxwell's equations, the magnetic field is calculated by the curl of the magnetic potential and, in a vacuum, describes the relationship of the applied currents to the geometry and boundary conditions. \cite{jackson1975classical} In this dissertation when a microwave resonator is discussed, it is the magnetic field profile that is calculated and plotted. However, it is the magnetic flux density that interacts with the sample and is the experimentally measurable quantity. This is because the magnetic flux density is the mechanical torque that is applied to the magnetic moment of the material. 
+From Maxwell's equations, the magnetic field is calculated by the curl of the magnetic  vector potential which, in a vacuum, describes the relationship of the applied currents to the geometry and boundary conditions. \cite{jackson1975classical} In this dissertation when a microwave resonator is discussed, it is the magnetic field profile that is calculated and plotted. However, it is the magnetic flux density that interacts with the sample and is the experimentally measurable quantity. This is because the magnetic flux density is the mechanical torque that is applied to the magnetic moment of the material. 
 
 This distinction is constant throughout the dissertation. If the quantity is measurable and interacts with the sample, it must be described in terms of the magnetic flux density $\mathbf{B}_1$, while calculated profiles are described in terms of magnetic field $\mathbf{H}_1$.
 
-Finally, the static magnetic field is simply referred to as $\mathbf{B}_0$ with units of miliTesla (10$^{-1}$ Gauss\footnote{In modern EPR literature the use of mT is now favored over G.}) since no time-varying magnetic susceptibility exists. A static magnetic field is the only instance where the dual ``magnetic field'' nomenclature is correct when referring to~$\mathbf{B}$.
+Finally, the static magnetic field is simply referred to as $\mathbf{B}_0$ with units of milliTesla (10$^{-1}$ Gauss\footnote{In modern EPR literature the use of mT is now favored over G.}) since this field is not time-varying. A static magnetic field is the only instance where the dual ``magnetic field'' nomenclature is correct when referring to~$\mathbf{B}$.
 
 \section{Crystal Orientations and Molecular Frames}
 In this section, the basic understanding of crystal orientations and how to relate them to the EPR experiment is discussed. 
@@ -125,7 +125,7 @@ In this section, the basic understanding of crystal orientations and how to rela
  \label{fig:CrystalOrientation}
 \end{figure}
 
-\paragraph*{Laboratory System Frame} The Laboratory system frame $[\mathbf{L}_1\; \mathbf{L}_2\; \mathbf{L}_3]$ is illustrated in Fig.~\ref{fig:CrystalOrientation} as the blue coordinate system. The laboratory system frame represents the physical coordinates as it exists in the EPR laboratory. The laboratory system frame is defined with the static magnetic field (${\textbf B}_0$) oriented along the L$_1$-axis, while the microwave magnetic flux density (${\textbf B}_1$) is along the L$_3$-axis. 
+\paragraph*{Laboratory System Frame} The Laboratory system frame $[\mathbf{L}_1\; \mathbf{L}_2\; \mathbf{L}_3]$ is illustrated in Fig.~\ref{fig:CrystalOrientation} as the blue coordinate system. The laboratory system frame represents the physical coordinates of the EPR laboratory. The laboratory system frame is defined with the static magnetic field (${\textbf B}_0$) oriented along the L$_1$-axis, while the microwave magnetic flux density (${\textbf B}_1$) is along the L$_3$-axis. 
 
 \paragraph*{Crystal Frame} The crystal frame $[\mathbf{a}\; \mathbf{b}\; \mathbf{c}]$ is defined with respect to the laboratory frame. When the crystal is inserted into the resonator, the crystal orientation is typically unknown. The crystal frame rotation can be defined by a set of Euler angles. Herein the nomenclature of the EasySpin simulation package. \cite{STOLL200642} The three Euler angles ($\alpha$, $\beta$, $\gamma$) define the rotation around defined axes of the current frame. The first angle $\alpha$ is a rotation around the $z$-component, defined by
 \begin{equation}
@@ -165,17 +165,17 @@ Using Eqn.~\ref{eqn:rotate}, the crystal frame $[\mathbf{a}\; \mathbf{b}\; \math
 
 During crystallization, an asymmetric unit may form. An asymmetric unit is where two or more enzymes bind together to form a sub-unit cell that is rotated and translated, as a whole, within the crystal symmetry. These sub-units must be consistent within the entire volume to obtain good X-ray crystallography diffraction data. Since each one of the enzymes produces an EPR signal the asymmetric unit must be taken into account. This is done by defining a second (or more) molecular frame per site. Again, the X-ray crystallography diffraction data provides the sub-unit geometry and a rectangular coordinate system is defined. 
 
-Every frame that gives rise to the simulated EPR signal is derived from the molecular frame. 
+Every frame that gives rise to the EPR signal is derived from the molecular frame. 
 
-\paragraph{g-Tensor Frame} The $g$-tensor frame is an approximation in rectangular coordinate to the relationship of the $g_x$, $g_y$, and $g_z$ components of the $g$-tensor. This rectangular coordinate system is defined as a rotation from the chosen molecular frame. For this reason, it is important to choose the molecular frame to have an origin where the majority of spin density resides. In EasySpin, the $g$-tensor is represented as Euler angles or rotation matrices.
+\paragraph{g-Tensor Frame} The $g$-tensor frame is an approximation in the rectangular coordinate system to the relationship of the $g_x$, $g_y$, and $g_z$ components of the $g$-tensor. This rectangular coordinate system is defined from a rotation from the chosen molecular frame. For this reason, it is important to choose the molecular frame to have an origin where the majority of spin density resides. In EasySpin, the $g$-tensor frame is represented as Euler angles or rotation matrices.
 
 \paragraph{A-Tensor and Quadrupole Frames} The A-tensor frame is, in rectangular coordinates, the relationship of the total hyperfine-interaction A$_x$, A$_y$, and A$_z$ components to the molecular frame. While the quadrupole frame represents the relationship of $P_{||}$ to the molecular frame. 
 
-Similar to the $g$-tensor, they are defined as a rotation from the chosen molecular frame. In EasySpin, the A-tensor and quadrupole frames can be represented as Euler angles or rotation matrices. 
+Similar to the $g$-tensor, they are defined from a rotation from the chosen molecular frame. In EasySpin, the A-tensor and quadrupole frames can be represented as Euler angles or rotation matrices. 
 
-\paragraph*{Crystal Symmetry} In general, the crystal symmetry can be described by Euler angle rotation and a spacial translation. \cite{hovmoller1981rotation} From the vector $\mathbf{x}$ a copy to the ``equivalent position'' $\mathbf{\tilde{x}}$ is formed at the rotated $R_{yxy}[\alpha,\beta,\gamma]$ and translated $\mathbf{t}$ position in the crystal, described by
+\paragraph*{Crystal Symmetry} In general, the crystal symmetry can be described by Euler angle rotation and a spacial translation. \cite{hovmoller1981rotation} From the vector $\mathbf{x}$ a copy to the ``equivalent position'' $\mathbf{\tilde{x}}$ is formed at the rotated $R_{zyz}[\alpha,\beta,\gamma]$ and translated $\mathbf{t}$ position in the crystal, described by
 \begin{equation}
-\mathbf{\tilde{x}} = R_{yxy}[\alpha,\beta,\gamma] \cdot \mathbf{x} + \mathbf{t}.
+\mathbf{\tilde{x}} = R_{zyz}[\alpha,\beta,\gamma] \cdot \mathbf{x} + \mathbf{t}.
 \end{equation}
 
 For the P$1\,2_1\,1$ symmetry, it has a $[\tilde{a},\;\tilde{b},\;\tilde{c}]$ of $[-a,\;b+1/2,\;-c]$. This can be performed with a rotation matrix and translation defined by 
@@ -240,7 +240,7 @@ The $Q$-value of the system can be calculated by the ratio of the stored energy 
 \begin{equation}
     Q = \frac{\omega U_m}{P_l},\label{ch2-Qval}
 \end{equation}
-where $\omega$ is the microwave resonance frequency in radians per second, $U_m$ is the stored magnetic energy, and $P_l$ is the power losses in the cavity walls and sample. At resonance, the magnetic and electric stored energy are equal. \cite{ramo1984fields} However, the magnetic stored energy is chosen for simplicity when dealing with a geometry where there are different dielectric volumes. Electric stored energy includes the relative permittivity $\epsilon_r$ accounted for in each volume, while magnetic stored energy includes the relative permeability $\mu_r$. In this formulation, the relative permeability is equal to unity and only the free-space permeability $\mu_0$ is needed. Therefore the magnetic stored energy is
+where $\omega$ is the microwave resonance frequency in radians per second, $U_m$ is the stored magnetic energy, and $P_l$ is the power losses in the cavity walls and sample. At resonance, the magnetic and electric stored energy are equal. \cite{ramo1984fields} However, the magnetic stored energy is chosen for simplicity when dealing with a geometry where there are different dielectric volumes. Electric stored energy includes the relative permittivity $\epsilon_r$ accounted for in each volume, while magnetic stored energy includes the relative permeability $\mu_r$. In this formulation we assume to be ``on resonance'' and, therefore, are not measuring the change in the relative permeability. Consequently, only the free-space permeability $\mu_0$ is needed. Therefore the magnetic stored energy is
 \begin{equation}
     U_m = \frac{\mu_0}{2} \int \mathbf{H}_1\cdot\mathbf{H}_1^* dV \qquad [\text{W}],
 \end{equation}
@@ -280,7 +280,7 @@ where the imaginary part of the dielectric permittivity ($\epsilon_r = \epsilon_
 \end{equation}
 The power loss in the system for the sample, resonator walls, and sample holder end sections is defined as $P_s$, $P_w$, and $P_e$, respectively, in the scripts of Appendix~B. The calculations for $P_s$ and $P_e$ rely on the constants \textit{ImDiSam} and \textit{ImDiHold} which are set to the imaginary part of the relative permittivity constant $\epsilon_r''$.
 
-From Eqn.~\ref{ch2-fehereq} the signal can be calculated by substituting the appropriate equations. Two EPR signal conditions can be calculated: signal unsaturable (Su; Unsat.) and signal saturable (Ss; Sat.). In continuous-wave experiments, signal unsaturable is defined as the EPR signal at constant incident power, while signal saturable is defined as the EPR signal at a constant magnetic flux density at the sample. A saturable sample can be calculated by normalizing to the magnetic flux density and computing
+From Eqn.~\ref{ch2-fehereq} the signal can be calculated by substituting the appropriate equations. Two EPR signal conditions can be calculated: signal unsaturable (Su; Unsat.) and signal saturable (Ss; Sat.). In continuous-wave experiments, signal unsaturable is defined as the EPR signal at constant incident power, while signal saturable is defined as the EPR signal at a constant magnetic flux density at the sample.\cite{hydehoff,misrabook} A saturable sample can be calculated by normalizing to the magnetic flux density and computing
 \begin{equation}
     S_s = \frac{\chi'' \omega}{10^4 P_l^{1/2} \text{Max}|\mathbf{B}_{1r}|} \int \mathbf{B}_{1r} \cdot \mathbf{B}_{1r}^* dV_s \qquad \text{[V]}. \label{ch2-eq:ss}
 \end{equation}{}
@@ -316,7 +316,7 @@ At the macro-scale view, the absorption of the microwaves cause a change in the 
 \begin{equation}
     \mu_r(\omega) = \mu_0 (1+M) = \mu_0 (1+ 4 \pi \eta \chi(\omega)), \label{eq-2:permea}
 \end{equation} 
-where $\eta$ is the filling factor from Eqn.~\ref{eq-2:filling} which describes the flux-linkage efficiency between the applied microwave magnetic field and the sample and $\chi(\omega)$ is the complex time-dependant magnetic susceptibility. For a simple Lorenzian-shaped spectrum, the magnetic susceptibility is 
+where $\eta$ is the filling factor from Eqn.~\ref{eq-2:filling} which describes the flux-linkage efficiency between the applied microwave magnetic field and the sample and $\chi(\omega)$ is the complex time-dependant magnetic susceptibility.\cite{schumacher1970introduction} For a simple Lorenzian-shaped spectrum, the magnetic susceptibility is 
 \begin{equation}
       \chi(\omega) = \frac{(\omega_0 - \omega) T_1 }{1+(\omega_0 - \omega)T_2^2+\gamma^2 H_{1r} T_1 T_2}- i \frac{1}{1+(\omega_0 - \omega)T_2^2+\gamma^2 H_{1r} T_1 T_2}, \label{eq-2:chi}
 \end{equation}
@@ -332,9 +332,9 @@ where the permeability of the sample consists of the freespace $\mu_0$ and $4\pi
 \begin{equation}
     R_R + i \omega L_R = (R_R + 4\pi \omega L_0 \eta \chi'') + i (1+4\pi\eta\chi')\omega L_0
 \end{equation}
-where $\omega$ is the frequency of operation and resonance occurs in the neighborhood of $(\omega_0-\omega)$. \cite{schumacher1970introduction} The change in magnetic permeability within a resonator is small compared to the microwave inductance and causes only a perturbation in the operating frequency (dispersion; $\chi'$) and losses (absorption; $\chi''$). The resonator impedance is matched to the bridge, called ``critical coupling'', where the phase of the incoming standing-wave voltage cancels the outgoing reflections. At critical coupling, no voltage is detected at the diode. However, in the neighborhood of resonance, the change in the tank-circuit resistance is directly measured as a change in the reflection coefficient. 
+where $\omega$ is the frequency of operation and resonance occurs in the neighborhood of $(\omega_0-\omega)$. \cite{schumacher1970introduction} The change in magnetic permeability within a resonator is small compared to the microwave inductance and causes only a perturbation in the operating frequency (dispersion; $\chi'$) and losses (absorption; $\chi''$). The resonator impedance is matched to the bridge, called ``critical coupling'', where the interference of the incoming standing-wave voltage cancels the outgoing reflections. At critical coupling, no voltage is detected at the diode. However, in the neighborhood of resonance, the change in the tank-circuit resistance is directly measured as a change in the reflection coefficient. 
 
-In the CW experiment, the static magnetic field is modulated by $B_0 + B_m Cos[2\pi f_m t]$, typically at a modulation frequency $f_m$ of 100~kHz, and is collected using a phase-sensitive detector. \cite{weil2007electron} If the modulation is small, the signal is derivative-like. \cite{Hyde1990pseudo} As the modulation amplitude $B_m$ is increased, the signal increases proportionally until the modulation amplitude approaches the intrinsic line-width of the sample where a broadening occurs. Choosing between signal and signal purity is known as the line-height--line-width compromise and is discussed in Ref.~[2.\kern-0.4em\citenum{eaton2010quantitative}]. 
+In the CW experiment, the static magnetic field is modulated by $B_0 + B_m \text{Cos}[2\pi f_m t]$, typically at a modulation frequency $f_m$ of 100~kHz, and is collected using a phase-sensitive detector. \cite{weil2007electron} If the modulation is small, the signal is derivative-like. \cite{Hyde1990pseudo} As the modulation amplitude $B_m$ is increased, the signal increases proportionally until the modulation amplitude approaches the intrinsic line-width of the sample where a broadening occurs. Choosing between signal and signal purity is known as the line-height--line-width compromise and is discussed in Ref.~[2.\kern-0.4em\citenum{eaton2010quantitative}]. 
 
 The modulated reflection coefficient changes are recorded on a detector diode connected to the phase-sensitive detector. When the frequency is held constant, as is typically done with automatic frequency control (AFC), an absorption spectrum is obtained. \cite{poole1967electron} A dispersion signal can be obtained by the frequency control feedback voltage or directly detected by a quadrature microwave channel. Continuous-wave is the standard EPR experiment. 
 
@@ -345,7 +345,7 @@ Specifically, the rapid passage regime satisfies the equation
 \begin{equation}
     \frac{|\mathbf{B}_{1r}|}{d B_0/dt} \ll \sqrt{T_1 T_2}
 \end{equation}
-where the magnitude of the magnitude microwave magnetic field $\mathbf{B}_{1r}$, as previously defined in Eqn.~\ref{circpoleH}, and the change in static magnetic field B$_0$ must be much less than the product of the spin-lattice relaxation time $T_1$ and spin-spin relaxation time $T_2$. The adiabatic regime is defined as 
+where the magnitude of the magnitude microwave magnetic field $\mathbf{B}_{1r}$, as previously defined in Eqn.~\ref{circpoleH}, and the change in static magnetic field B$_0$ must be much less than the geometric mean of the spin-lattice relaxation time $T_1$ and spin-spin relaxation time $T_2$. The adiabatic regime is defined as 
 \begin{equation}
     \gamma |\mathbf{B}_{1r}|^2 \gg \frac{d B_0}{dt},
 \end{equation}
@@ -382,7 +382,7 @@ where $\partial \phi/\partial t$ is the time-varying magnetic flux, which includ
 The voltage $V_0$ decays exponentially with the spin-lattice relaxation time $T_2$ and, within the decay envelope, exists the magnetization dephasing from the $x$-$y$-plane. The signal directly after a $\pi/2$-pulse is known as the free induction decay (FID) and it is this dephasing that is refocused after time $\tau$ to form the echo in the ESE experiment. Therefore, the experimental parameter $\tau$ must be chosen to allow for sufficient ring-down of the tank-circuit, but not so long as the signal $V_0$ has decayed beyond detection.
 
 \subsubsection*{ESEEM and HYSCORE.}
-The Electron spin echo envelope modulation (ESEEM) experiment has a  pulse sequence of ${\pi/2\!-\!\tau\!-\!\pi/2\!-\!t_1\!-\!\pi/2}$. The three-pulse variation of ESEEM (3P-ESEEM) puls sequence is illustrated in Fig.~\ref{fig:EPRpulse}. ESEEM is capable of resolving hyperfine and quadrupole interactions of the electron to neighboring nuclei. It is complementary to electron-nuclear double resonance experiments (ENDOR). \cite{schweiger2001principles,Doorslaer2007,Harmer2009,CUTSAIL20151370}
+The Electron spin echo envelope modulation (ESEEM) experiment has a  pulse sequence of ${\pi/2\!-\!\tau\!-\!\pi/2\!-\!t_1\!-\!\pi/2}$. The three-pulse variation of ESEEM (3P-ESEEM) pulse sequence is illustrated in Fig.~\ref{fig:EPRpulse}. ESEEM is capable of resolving hyperfine and quadrupole interactions of the electron to neighboring nuclei. It is complementary to electron-nuclear double resonance experiments (ENDOR). \cite{schweiger2001principles,Doorslaer2007,Harmer2009,CUTSAIL20151370}
 
 The 3P-ESEEM signal used in this work arises from the semi-forbidden transitions between the different $M_s$ manifolds ($\pm \ket{\frac{1}{2}}$; Fig.~\ref{fig:EPREnergy}), but within the same $M_I$ manifold. This nuclear coherence mixing is directly probed by the dephasing that is occurring at time $\tau$ which is allowed to mix for time $t_1$. 
 
@@ -405,7 +405,7 @@ The Rabi oscillation frequency $f_{rab}$ produced in a nutation experiment can b
 \begin{equation}
   f_{rab} = \frac{\gamma B_{1r}}{2 \pi }, \label{eqB1rrab}
 \end{equation}
-where $\gamma$ is the gyromagnetic ratio and B$_{1r}$ is the magnetic flux density incident on a sample. When measuring B$_{1r}$, the average over the entire sample is observed. If the incident $\mathbf{B}_1r$ was homogeneous, a single frequency would be produced. However, for cavities with non-uniform $\mathbf{B}_1r$ a distribution of frequencies is generated and can be assessed by the Fourier transform of the Rabi oscillations. 
+where $\gamma$ is the gyromagnetic ratio and B$_{1r}$ is the magnetic flux density incident on a sample. If the incident $\mathbf{B}_{1r}$ was homogeneous, a single frequency would be produced. However, for cavities with non-uniform $\mathbf{B}_{1r}$ a distribution of frequencies is generated and can be assessed by the Fourier transform of the Rabi oscillations. 
 
 {\renewcommand{\bibsection}{\clearpage\section*{\bibname}\markboth{\bibname}{\bibname}}
 \renewcommand{\bibname}{CHAPTER 2. REFERENCES}
