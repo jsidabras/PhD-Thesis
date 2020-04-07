@@ -9,7 +9,7 @@ The complete Hamiltonian $\mathcal{H}_0$ of a molecular system is very complex. 
 \begin{equation}
     \mathcal{H}_0 \ket{\Psi} = {\mathbf E} \ket{\Psi}
 \end{equation}
-where the wave function $\ket{\Psi}$ describes how the molecular system is propagated over time, known as the time-dependant Schr\"{o}dinger equation. Since EPR measures the time-invariant ground states, it is sufficient to describe only the interactions of the molecular system energy contained in the Hamiltonian. The energy states ${\mathbf E}$ are further simplified by the phenomenologically derived spin Hamiltonian operator $\hat{\mathcal{H}}$ and the time-dependant Schr\"{o}dinger equation is simplified to only the spin states of the system. \cite{SpinDyn,abragam1961} 
+where the wave function $\ket{\Psi}$ describes how the molecular system is propagated over time, known as the time-dependant Schr\"{o}dinger equation. Since EPR measures the time-invariant ground states, it is sufficient to describe only the interactions of the atomic system energy contained in the Hamiltonian. These energy states ${\mathbf E}$ are further simplified by the phenomenologically derived spin Hamiltonian operator $\hat{\mathcal{H}}$ and the time-dependant Schr\"{o}dinger equation is simplified to only the spin states of the system. \cite{SpinDyn,abragam1961} 
 
 The spin Hamiltonian comprises of the superposition of the magnetic and electric properties of the molecular system, such that,
 \begin{equation}
@@ -24,7 +24,7 @@ where the electron Zeeman interaction $\hat{\mathcal{H}}_{ze}$, the hyperfine in
  \label{fig:EPREnergy}
 \end{figure}
 
-In this formulation, the static magnetic field $\mathbf{B}_0$ is assumed to be along the $z$ axis and denote the transpose of a tensor with a `T'. In this work, it is assumed that the electron Zeeman interaction is the largest interaction followed by the hyperfine interaction, nuclear Zeeman, electric quadrupole. In cases with zero-field splitting, the Zeeman interaction is the second largest.
+In this formulation, the static magnetic field $\mathbf{B}_0$ is assumed to be along the $z$ axis and denote the transpose of a tensor with a `T'. In this work, it is assumed that the electron Zeeman interaction is the largest interaction (except in cases of zero-field splitting) followed by the hyperfine interaction, nuclear Zeeman, electric quadrupole.
 
 \subsubsection*{Zeeman interactions}
 When a static magnetic field is applied to a molecular system with angular momentum, the angular momentum aligns in such a way that a Boltzmann distribution is formed. This removes the degeneracy of the electron magnetization $\mathbf{M}_s$ manifold, splitting the energy levels, illustrated in Fig.~\ref{fig:EPREnergy} as the initial splitting. For an electron spin of $S = 1/2$, the initial energy levels are split into $\mathbf{M}_s = \ket{+\frac{1}{2}}, \ket{-\frac{1}{2}}$ for spin-up and spin-down, respectively. Both the electron $\hat{\mathcal{H}}_{ze}$ and nuclear $\hat{\mathcal{H}}_{nz}$ Zeeman interactions occur when a static magnetic field $\mathbf{B}_z$ is applied.
@@ -33,9 +33,9 @@ The electron Zeeman interaction is defined by
 \begin{equation*}
     \hat{\mathcal{H}}_{ze} = \beta_e \mathbf{B}^\text{T}_z  \cdot \mathbf{g} \cdot \mathbf{S}
 \end{equation*}
-where $\beta_e$ is the Bohr magneton, the transpose of the static magnetic field $\mathbf{B}_z^{\text{T}}$, the vector operator $\mathbf{S} = [\mathbf{S}_x \; \mathbf{S}_y \; \mathbf{S}_z]$ is the spin angular momentum of the electron. 
+where $\beta_e$ is the Bohr magneton, the transpose of the static magnetic field $\mathbf{B}_z^{\text{T}}$, the vector operator $\mathbf{S} = [\mathbf{S}_x \; \mathbf{S}_y \; \mathbf{S}_z]$ is the spin operator of the angular momentum of the electron. 
 
-An unpaired electron in a vacuum has an isotropic spin with angular momentum. It is then the introduction of the electron with other atoms and how those atoms distribute the electron that gives rise to different components of the spin Hamiltonian.\cite{abragam2012electron,harriman1978theoretical} This ``pushing'' and ``pulling'' of the electron by spin-orbit coupling leads to anisotropic $\mathbf{g}$. The matrix $\mathbf{g}$ is what is known as the $g$-tensor and is a spatial distribution of the angular momentum of the electron. The $g$-tensor is typically made diagonal and discussed in terms of the $g_x$, $g_y$, and $g_z$ principal components, where the magnitude is denoted as $g_{iso}$. EPR resonance occurs as a result of the incident energy being matched by the energy difference of the electron Zeeman levels. 
+An unpaired electron in a vacuum has an isotropic spin with angular momentum. It is then the interaction of an electron with other electrons and nuclear spins and how those atoms distribute the electron that gives rise to different components of the spin Hamiltonian.\cite{abragam2012electron,harriman1978theoretical} This ``pushing'' and ``pulling'' of the electron by spin-orbit coupling leads to anisotropic $\mathbf{g}$. The matrix $\mathbf{g}$ is what is known as the $g$-tensor and is a spatial distribution of the angular momentum of the electron. The $g$-tensor is typically made diagonal and discussed in terms of the $g_x$, $g_y$, and $g_z$ principal components, where the magnitude is denoted as $g_{iso}$. EPR resonance occurs as a result of the incident energy matching the energy difference of the electron Zeeman levels. 
 
 Deviations from a free-electron can be used to obtain information on the local environment. Since these processes are non-cooperative, we can separate the free-electron from all the other contributions
 \begin{equation*}
@@ -47,7 +47,7 @@ For systems when the electron interacts with intrinsic or surrounding nuclei wit
 \begin{equation*}
     \hat{\mathcal{H}}_{nz} = - \beta_n \sum_{k=1}^m g_{n,k} \mathbf{B}^\text{T}_z  \cdot \mathbf{I}_k,
 \end{equation*}
-where $\beta_n$ is the nuclear magneton, the transpose of the static magnetic field $\mathbf{B}_z$ is marked with a `T', the vector operator $\mathbf{I}_k = [\mathbf{I}_x \; \mathbf{I}_y \; \mathbf{I}_z]$ is the spin angular momentum of the nuclei. The summation of the nuclear contributions are represented by the index $k$ for each $m$ nucleus that interacts with the electron. Each nucleus has a distinct nuclear $g_{n,k}$-value and angular momentum $\mathbf{I}_k$ and is assumed to be isotropic. The visualization of the nuclear Zeeman effect is illustrated as a perturbation on the electron-nuclear hyperfine interaction shown in Fig.~\ref{fig:EPREnergy}.
+where $\beta_n$ is the nuclear magneton, the transpose of the static magnetic field $\mathbf{B}_z$ is marked with a `T', the vector operator $\mathbf{I}_k = [\mathbf{I}_x \; \mathbf{I}_y \; \mathbf{I}_z]$ is the spin operator of the angular momentum of the nuclei. The summation of the nuclear contributions are represented by the index $k$ for each $m$ nucleus that interacts with the electron. Each nucleus has a distinct nuclear $g_{n,k}$-value and angular momentum $\mathbf{I}_k$ and is assumed to be isotropic. The visualization of the nuclear Zeeman effect is illustrated as a perturbation on the electron-nuclear hyperfine interaction shown in Fig.~\ref{fig:EPREnergy}.
 
 \subsubsection*{Nuclear-Electron Interactions}
 Since EPR is the measurement of how a valence (unpaired) electron interacts with the surrounding environment, information on the surrounding nuclei is possible if these nuclei have an inherent nuclear spin $\mathbf{I}$. Such nuclei include, for example, $^1$H, $^2$H, $^{14}$N, $^{15}$N, $^{57}$Fe, and $^{13}$C, which can be synthetically incorporated into the system to gain more information than the natural abundance of some of the atoms. \cite{Doorslaer2007,Harmer2009,CUTSAIL20151370}
@@ -57,14 +57,14 @@ The hyperfine interactions are defined as the coupling between the paramagnetic 
 \begin{equation}
     \hat{\mathcal{H}}_{hfi} = \mathbf{S}^{\text{T}} \cdot \mathbf{A} \cdot \mathbf{I}_k = a_{iso}\mathbf{S}^{\text{T}} \cdot \mathbf{I}_k + \mathbf{S}^{\text{T}} \cdot \mathbf{T} \cdot \mathbf{I}_k \label{eq-2:hfi}
 \end{equation}
-for each the interacting nuclei $k$, there exists such an interaction. The Fermi contact describes the delocalization of the electron to the surrounding nuclei. At a sufficient distance (>0.26~nm), the spacial tensor $\mathbf{T}$ can be described by
+for each of the interacting nuclei $k$, there exists such an interaction. The Fermi contact is proportional to electron spin density at the nucleus. At a sufficient distance (>0.26~nm), the spacial tensor $\mathbf{T}$ can be described by
 \begin{equation}
     \mathbf{T} = \frac{\mu_0}{4 \pi \hbar}\frac{1}{r^3} g_n \beta_n \beta_e g_i (3r_i r_j - \delta_{ij}) \qquad (i,j = x,y,z), \label{eq-2:hfiT}
 \end{equation}
 where the $x$, $y$, and $z$-components of the hyperfine tensor are treated independently.\cite{Doorslaer2007} Illustrated in Fig.~\ref{fig:EPREnergy} is the nuclear-electron hyperfine interaction assuming only the isotropic component of interaction. In frozen solution, this isotropic component is broadened by the distribution of the frequency components defined by $\mathbf{T}$. Only single-crystal EPR spectroscopy can truly obtain the full hyperfine-tensor information for systems with anisotropic hyperfine interactions $\mathbf{T}$ by measuring the total hyperfine interaction $\mathbf{A}$.
 
 \paragraph*{Electric-Nuclear Quadrupole Interactions}
-The electric-nuclear quadrupole interaction only exists for nuclei with a spin $I$ greater than 1/2 and is caused by electric field gradients due to the interaction of the electron with the second moment of the nuclear angular momentum. This can be rationalized since the nuclear Zeeman interaction is assumed to be isotropic, while the second moment (gradient) is a measurement of the deviation from isotropic angular momentum.\cite{griffith1964theory} One can learn about the nature of the chemical bonding and the delocalization of the electron if the interaction between the quadrupole moment $Q$ and electron is known.\cite{quadref} 
+The electric-nuclear quadrupole interaction only exists for nuclei with a spin $I$ greater than 1/2 and is caused by electric field gradients due to the interaction of the electron with the quadrupole coupling. This coupling can be described as the second moment of the nuclear angular momentum. This can be rationalized since the nuclear Zeeman interaction is assumed to be isotropic, while the second moment (gradient) is a measurement of the deviation from isotropic angular momentum.\cite{griffith1964theory} One can learn about the nature of the chemical bonding and the delocalization of the electron if the interaction between the nuclear quadrupole coupling and electron is known.\cite{quadref} 
 
 The electric-nuclear quadrupole interaction is described by the Hamiltonian
 \begin{equation}
@@ -96,7 +96,7 @@ For many unpaired electrons with strong coupling, an effective spin greater than
 \begin{equation}
     \hat{\mathcal{H}}_{zfs} = \mathbf{S}^{\text{T} } \cdot \mathbf{D} \cdot \mathbf{S}
 \end{equation}
-where the zero-field splitting tensor $\mathbf{D}$ is a symmetric interaction from close spin-orbital coupling between two or more electrons. The zero-field splitting is especially important in molecular magnets, where it is the direct characterization of the magnetization caused by the interactions of electrons as magnetic monopoles. \cite{barra1998high} With very large values of $D$, the EPR transition energies can only become excited with high-field--high-frequency EPR methods. \cite{Nehrkorn13} 
+where the zero-field splitting tensor $\mathbf{D}$ is a traceless symmetric interaction from close spin-orbital coupling between two or more electrons. The zero-field splitting is especially important in molecular magnets, where it is the direct characterization of the magnetization caused by the interactions of electrons as magnetic monopoles. \cite{barra1998high} With very large values of $D$, the EPR transition energies can only become excited with high-field--high-frequency EPR methods. \cite{Nehrkorn13} 
 
 \section{On the use of Magnetic Field and Flux Density}
 The EPR literature uses the magnetic field $\mathbf{H}$ and magnetic flux density $\mathbf{B}$ interchangeably as ``magnetic field''. It is somewhat disingenuous to state that the relationship of the magnetic field and magnetic flux density is simply related by the free-space permeability $\mu_0$. The focus of this section is to define the usage in this dissertation by following the nomenclature of Jackson of Ref.~[2.\kern-0.4em\citenum{jackson1975classical}] so that 
@@ -111,9 +111,9 @@ where $\omega$ is the frequency of interest (radians per second). It is the magn
 
 From Maxwell's equations, the magnetic field is calculated by the curl of the magnetic  vector potential which, in a vacuum, describes the relationship of the applied currents to the geometry and boundary conditions. \cite{jackson1975classical} In this dissertation when a microwave resonator is discussed, it is the magnetic field profile that is calculated and plotted. However, it is the magnetic flux density that interacts with the sample and is the experimentally measurable quantity. This is because the magnetic flux density is the mechanical torque that is applied to the magnetic moment of the material. 
 
-This distinction is constant throughout the dissertation. If the quantity is measurable and interacts with the sample, it must be described in terms of the magnetic flux density $\mathbf{B}_1$, while calculated profiles are described in terms of magnetic field $\mathbf{H}_1$.
+This distinction is constant throughout the dissertation. If the quantity is measurable and interacts with the sample, it must be described in terms of the magnetic flux density $\mathbf{B}_1$, while calculated profiles are described in terms of magnetic field $\mathbf{H}_1$. 
 
-Finally, the static magnetic field is simply referred to as $\mathbf{B}_0$ with units of milliTesla (10$^{-1}$ Gauss\footnote{In modern EPR literature the use of mT is now favored over G.}) since this field is not time-varying. A static magnetic field is the only instance where the dual ``magnetic field'' nomenclature is correct when referring to~$\mathbf{B}$.
+Finally, the static magnetic field is simply referred to as $\mathbf{B}_0$ with units of milliTesla (10$^{-1}$ Gauss\footnote{In modern EPR literature the use of mT is now favored over G for compatability to SI units.}) since this field is not time-varying. A static magnetic field is the only instance where the dual ``magnetic field'' nomenclature is correct when referring to~$\mathbf{B}$.
 
 \section{Crystal Orientations and Molecular Frames}
 In this section, the basic understanding of crystal orientations and how to relate them to the EPR experiment is discussed. 
@@ -127,7 +127,7 @@ In this section, the basic understanding of crystal orientations and how to rela
 
 \paragraph*{Laboratory System Frame} The Laboratory system frame $[\mathbf{L}_1\; \mathbf{L}_2\; \mathbf{L}_3]$ is illustrated in Fig.~\ref{fig:CrystalOrientation} as the blue coordinate system. The laboratory system frame represents the physical coordinates of the EPR laboratory. The laboratory system frame is defined with the static magnetic field (${\textbf B}_0$) oriented along the L$_1$-axis, while the microwave magnetic flux density (${\textbf B}_1$) is along the L$_3$-axis. 
 
-\paragraph*{Crystal Frame} The crystal frame $[\mathbf{a}\; \mathbf{b}\; \mathbf{c}]$ is defined with respect to the laboratory frame. When the crystal is inserted into the resonator, the crystal orientation is typically unknown. The crystal frame rotation can be defined by a set of Euler angles. Herein the nomenclature of the EasySpin simulation package. \cite{STOLL200642} The three Euler angles ($\alpha$, $\beta$, $\gamma$) define the rotation around defined axes of the current frame. The first angle $\alpha$ is a rotation around the $z$-component, defined by
+\paragraph*{Crystal Frame} The crystal frame $[\mathbf{a}\; \mathbf{b}\; \mathbf{c}]$ is defined with respect to the laboratory frame. When the crystal is inserted into the resonator, the crystal orientation is typically unknown. The crystal frame rotation can be defined by a set of Euler angles. Herein the nomenclature of the EasySpin simulation package is used. \cite{STOLL200642} The three Euler angles ($\alpha$, $\beta$, $\gamma$) define the rotation around defined axes of the current frame. The first angle $\alpha$ is a rotation around the $z$-component, defined by
 \begin{equation}
     Rot_z[\theta] = \begin{bmatrix}
    Cos[\theta] & -Sin[\theta] & 0\\
@@ -209,11 +209,11 @@ Mosaicity can affect both the X-ray crystallography diffraction data and the EPR
 \begin{figure}[htb]
  \centering
  \includegraphics[width=0.5\textwidth]{Kapitel/Ch2-Images/RotateMeLeftRight.eps}
- \caption[Rotation Planes of micro-Helix.]{Shown are the two rotation planes available for crystal rotation in the self-resonant micro-helix of Chapter~5. A) A full 180 degree rotation is available when the ${\textbf B}_1$ is along the L$_3$-axis. B) A second plane is available when the ${\textbf B}_1$ is along the L$_2$-axis. A rotation in this plane is limited by a sinusoidal dependence of the EPR signal. }
+ \caption[Rotation Planes of micro-Helix.]{Shown are the two rotation planes available for crystal rotation in the self-resonant micro-helix of Chapter~5. A) A full 180 degree rotation is available when the ${\textbf B}_1$ is along the L$_3$-axis. B) A second plane is available where the ${\textbf B}_1$ is along the L$_2$-axis. A rotation in this plane is limited by a sinusoidal dependence of the EPR signal. }
  \label{fig:RotateMe}
 \end{figure}
 
-\paragraph*{Crystal Rotation} To obtain a magnetic resonance rotation pattern, the crystal must be rotated with respect $\mathbf{B}_0$, illustrated in Fig.~\ref{fig:RotateMe}A. This is currently performed by rotating the entire resonator probe around the L$_3$-axis. If a second plane is needed, the angle can be modified by orientating the $\mathbf{B}_1$ along the L$_2$-axis, illustrated in Fig.~\ref{fig:RotateMe}B by using a 90$^{\circ}$ bend. This secondary plane of rotation is limited since the EPR signal has a sinusoidal dependence is reduced as $\mathbf{B}_1$ becomes parallel to $\mathbf{B}_0$. With a good signal-to-noise ratio, EPR can be collected over a 120 degree rotation.
+\paragraph*{Crystal Rotation} To obtain a magnetic resonance rotation pattern, the crystal must be rotated with respect to $\mathbf{B}_0$, illustrated in Fig.~\ref{fig:RotateMe}A. This is currently performed by rotating the entire resonator probe around the L$_3$-axis. If a second plane is needed, the angle can be modified by orientating the $\mathbf{B}_1$ along the L$_2$-axis, illustrated in Fig.~\ref{fig:RotateMe}B by using a 90$^{\circ}$ bend. This secondary plane of rotation is limited since the EPR signal has a sinusoidal dependence. The EPR signal is reduced as $\mathbf{B}_1$ becomes parallel to $\mathbf{B}_0$. With a good signal-to-noise ratio, EPR can be collected over a 120 degree rotation.
 
 \section{Finite-element modeling Simulations}
 Commercially available electromagnetic finite-modeling software provides a suite in which boundary conditions, sources, and dielectric properties are combined to solve Maxwell's equations in a CAD-like environment. In this dissertation, finite-element modeling is used to design, understand, and optimize microwave resonators. Here, an introduction to Ansys Electromagnetics Suite (Pittsburgh, PA, USA; version 19.4; High Frequency Structure Simulator (HFSS)) and a practical exercise will be developed. 
@@ -248,17 +248,17 @@ where ${\textbf H}_1$ is the microwave magnetic field in all space ($V$) includi
 
 The filling factor is defined as the ratio of the magnetic flux density energy in the sample that gives rise to an EPR signal to the microwave magnetic field energy in all space. This can be calculated as
 \begin{equation}
- \eta = \frac{\int {\mathbf B}_{1r} \cdot {\mathbf B}_{1r}^* dV_s}{\mu_0 \int {\mathbf H}_1 \cdot {\mathbf H}_1^* dV}, \label{eq-2:filling}
+ \eta = \frac{\int {\mathbf B}_{1r} \cdot {\mathbf B}_{1r}^* dV_s}{\int {\mathbf B}_1 \cdot {\mathbf B}_1^* dV}, \label{eq-2:filling}
 \end{equation}
 where ${\textbf B}_{1r}$ is one component of the clockwise (or counter clockwise) rotational component of the linearly polarized flux density ${\textbf B}_1$ perpendicular to the static magnetic field in the sample volume ($V_s$). \cite{jackson1975classical} In magnetic resonance, the spin system is coupled to either the right-handed or left-handed (clockwise or counter clockwise) polarization of the magnetic flux density. \cite{abragam1961}
 
 A linearly polarized wave can be decomposed into two in-phase circular components. From Ref.~[2.\kern-0.4em\citenum{jackson1975classical}], an expression for the right-handed ($+$) or left-handed ($-$) component of the magnetic flux density can be derived, such that
 \begin{equation}
-    \mathbf{B}_{\pm} =  \mathbf{B}\cdot\frac{\mathbf{\hat{y}} \pm i\mathbf{\hat{z}}}{\sqrt{2}} \qquad \text{[T]}, \label{circpoleHpm}
+    \mathbf{B}_{1\pm} =  \mathbf{B_1}\cdot\frac{\mathbf{\hat{y}} \pm i\mathbf{\hat{z}}}{\sqrt{2}} \qquad \text{[T]}, \label{circpoleHpm}
 \end{equation}
-where the static magnetic field B$_0$ is in the $\mathbf{\hat{x}}$ direction. In cavity resonators, where the microwave magnetic field is well defined, the left- and right-handed components are equal. However, open structures and systems with multiple wavelengths within the sample could exhibit elliptical polarization. This results in different magnitudes and field profiles for the two components. The component of the magnetic flux density that interacts with the sample during resonance is the amplitude of Eqn.~\ref{circpoleHpm}, therefore, the magnitude of the microwave magnetic flux density in the (right-handed) rotating frame is the amplitude of Re($\mathbf{B}_+\epsilon_+e^{-iwt}$) such that
+where the static magnetic field B$_0$ is in the $\mathbf{\hat{x}}$ direction. In cavity resonators, where the microwave magnetic field is well defined, the left- and right-handed components are equal. However, open structures and systems with multiple wavelengths within the sample could exhibit elliptical polarization. This results in different magnitudes and field profiles for the two components. The component of the magnetic flux density that interacts with the sample during resonance is the amplitude of Eqn.~\ref{circpoleHpm}, therefore, the magnitude of the microwave magnetic flux density in the (right-handed) rotating frame is the amplitude of Re($\mathbf{B}_{1+}\epsilon_+e^{-iwt}$) such that
 \begin{equation}
-    \mathbf{B}_{1r} =  \frac{|\mathbf{B}_{+}|}{\sqrt{2}} \qquad \text{[T]}. \label{circpoleH}
+    \mathbf{B}_{1r} =  \frac{|\mathbf{B}_{1+}|}{\sqrt{2}} \qquad \text{[T]}. \label{circpoleH}
 \end{equation}
 Herein, this formulation was only applied to systems that exhibit linear polarization in the sample (Chapter~3 and 5) and other methods were relied upon to approximate the EPR signal in cases where multiple wavelengths are involved (Chapter~4).
 
