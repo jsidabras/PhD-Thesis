@@ -2,14 +2,14 @@
 \setcitestyle{citesep={,\,\thechapter.}}
 \section{EPR spectroscopy}
 
-In this section, the underlying theoretical and practical principles of the EPR experiment will be discussed as it relates to the experiments performed in this work. 
+In this section, the underlying theoretical and practical principles of the EPR experiment are discussed as it relates to the experiments performed in this work. 
 
 \subsection{Spin Hamiltonian}
 The complete Hamiltonian $\mathcal{H}_0$ of a molecular system is very complex. All of the space and spin coordinates of electrons and nuclei would be included in the complete Hamiltonian, such that,
 \begin{equation}
     \mathcal{H}_0 \ket{\Psi} = {\mathbf E} \ket{\Psi}
 \end{equation}
-where the wave function $\ket{\Psi}$ describes how the molecular system is propagated over time, known as the time-dependant Schr\"{o}dinger equation. Since EPR measures the time-invariant ground states, it is sufficient to describe only the interactions of the atomic system energy contained in the Hamiltonian. These energy states ${\mathbf E}$ are further simplified by the phenomenologically derived spin Hamiltonian operator $\hat{\mathcal{H}}$ and the time-dependant Schr\"{o}dinger equation is simplified to only the spin states of the system. \cite{SpinDyn,abragam1961} 
+where the wave function $\ket{\Psi}$ describes how the molecular system is propagated over time, known as the time-dependant Schr\"{o}dinger equation. Since EPR measures the time-invariant ground states, it is sufficient to describe only the interactions of the atomic system energy contained in the Hamiltonian. These energy states ${\mathbf E}$ are further simplified by the phenomenologically derived spin Hamiltonian operator $\hat{\mathcal{H}}$. Then the time-dependant Schr\"{o}dinger equation only includes the spin states of the system. \cite{SpinDyn,abragam1961} 
 
 The spin Hamiltonian comprises of the superposition of the magnetic and electric properties of the molecular system, such that,
 \begin{equation}
@@ -24,7 +24,7 @@ where the electron Zeeman interaction $\hat{\mathcal{H}}_{ze}$, the hyperfine in
  \label{fig:EPREnergy}
 \end{figure}
 
-In this formulation, the static magnetic field $\mathbf{B}_0$ is assumed to be along the $z$ axis and denote the transpose of a tensor with a `T'. In this work, it is assumed that the electron Zeeman interaction is the largest interaction (except in cases of zero-field splitting) followed by the hyperfine interaction, nuclear Zeeman, electric quadrupole.
+In this formulation, the static magnetic field $\mathbf{B}_0$ was assumed to be along the $z$ axis and denote the transpose of a tensor with a `T'. Except in cases of zero-field splitting, it was also assumed that the electron Zeeman interaction is the largest interaction followed by the hyperfine interaction, nuclear Zeeman, electric quadrupole.
 
 \subsubsection*{Zeeman interactions}
 When a static magnetic field is applied to a molecular system with angular momentum, the angular momentum aligns in such a way that a Boltzmann distribution is formed. This removes the degeneracy of the electron magnetization $\mathbf{M}_s$ manifold, splitting the energy levels, illustrated in Fig.~\ref{fig:EPREnergy} as the initial splitting. For an electron spin of $S = 1/2$, the initial energy levels are split into $\mathbf{M}_s = \ket{+\frac{1}{2}}, \ket{-\frac{1}{2}}$ for spin-up and spin-down, respectively. Both the electron $\hat{\mathcal{H}}_{ze}$ and nuclear $\hat{\mathcal{H}}_{nz}$ Zeeman interactions occur when a static magnetic field $\mathbf{B}_z$ is applied.
@@ -213,7 +213,7 @@ Mosaicity can affect both the X-ray crystallography diffraction data and the EPR
  \label{fig:RotateMe}
 \end{figure}
 
-\paragraph*{Crystal Rotation} To obtain a magnetic resonance rotation pattern, the crystal must be rotated with respect to $\mathbf{B}_0$, illustrated in Fig.~\ref{fig:RotateMe}A. This is currently performed by rotating the entire resonator probe around the L$_3$-axis. If a second plane is needed, the angle can be modified by orientating the $\mathbf{B}_1$ along the L$_2$-axis, illustrated in Fig.~\ref{fig:RotateMe}B by using a 90$^{\circ}$ bend. This secondary plane of rotation is limited since the EPR signal has a sinusoidal dependence. The EPR signal is reduced as $\mathbf{B}_1$ becomes parallel to $\mathbf{B}_0$. With a good signal-to-noise ratio, EPR can be collected over a 120 degree rotation.
+\paragraph*{Crystal Rotation} To obtain a magnetic resonance rotation pattern, the crystal must be rotated with respect to $\mathbf{B}_0$, illustrated in Fig.~\ref{fig:RotateMe}A. This is currently performed by rotating the entire resonator probe around the L$_3$-axis. If a second plane is needed, the angle can be modified by orientating the $\mathbf{B}_1$ along the L$_2$-axis, illustrated in Fig.~\ref{fig:RotateMe}B by using a 90$^{\circ}$ bend. This secondary plane of rotation is limited since the EPR signal is reduced as $\mathbf{B}_1$ becomes parallel to $\mathbf{B}_0$. With a good signal-to-noise ratio, EPR can be collected over a 120 degree rotation in this plane.
 
 \section{Finite-element modeling Simulations}
 Commercially available electromagnetic finite-modeling software provides a suite in which boundary conditions, sources, and dielectric properties are combined to solve Maxwell's equations in a CAD-like environment. In this dissertation, finite-element modeling is used to design, understand, and optimize microwave resonators. Here, an introduction to Ansys Electromagnetics Suite (Pittsburgh, PA, USA; version 19.4; High Frequency Structure Simulator (HFSS)) and a practical exercise will be developed. 
@@ -234,13 +234,13 @@ For a matched reflection cavity and a voltage-sensitive detector, Feher expresse
 \begin{equation}
     S \propto \chi'' \eta Q P^{1/2} \qquad [\text{V}],\label{ch2-fehereq}
 \end{equation}
-where $\chi''$ is the imaginary part of the magnetic susceptibility which represents the magnitude of the absorption spectrum, $\eta$ is the filling factor, $Q$ is the unloaded $Q_0$-value with a sample, and $P$ is the incident microwave power.  \cite{FeherSignal} The signal is proportional to volts when the system is critically coupled and calculated at microwave resonance. When comparing resonators, the sample has the same concentration for an arbitrary volume and, as such, the magnetic susceptibility $\chi''$ is simply proportional to frequency. This assumption is used to incorporate the Boltzmann factor to resonator comparisons (i.e. temperature or frequency differences).
+where $\chi''$ is the imaginary part of the magnetic susceptibility which represents the magnitude of the absorption spectrum, $\eta$ is the filling factor, $Q$ is the unloaded $Q_0$-value with a sample, and $P$ is the incident microwave power.  \cite{FeherSignal} The signal is proportional to volts when the system is critically coupled and calculated at microwave resonance. When comparing resonators, we assume the sample has the same concentration for an arbitrary volume and, as such, the rf magnetic susceptibility $\chi''$ is simply proportional to frequency. This assumption is used to incorporate the Boltzmann factor to resonator comparisons (i.e. temperature or frequency differences).
 
-The $Q$-value of the system can be calculated by the ratio of the stored energy per cycle and the power losses. Such that
+The $Q$-value of the system can be calculated by the ratio of the total stored energy of the resonator by the power losses per cycle. Such that
 \begin{equation}
     Q = \frac{\omega U_m}{P_l},\label{ch2-Qval}
 \end{equation}
-where $\omega$ is the microwave resonance frequency in radians per second, $U_m$ is the stored magnetic energy, and $P_l$ is the power losses in the cavity walls and sample. At resonance, the magnetic and electric stored energy are equal. \cite{ramo1984fields} However, the magnetic stored energy is chosen for simplicity when dealing with a geometry where there are different dielectric volumes. Electric stored energy includes the relative permittivity $\epsilon_r$ accounted for in each volume, while magnetic stored energy includes the relative permeability $\mu_r$. In this formulation we assume to be ``on resonance'' and, therefore, are not measuring the change in the relative permeability. Consequently, only the free-space permeability $\mu_0$ is needed. Therefore the magnetic stored energy is
+where $\omega$ is the microwave resonance frequency in radians per second, $U_m$ is the stored magnetic energy, and $P_l$ is the power losses in the cavity walls and sample. At resonance, the magnetic and electric stored energy are equal. \cite{ramo1984fields} However, the magnetic stored energy is chosen for simplicity when dealing with a geometry where there are different dielectric volumes. Electric stored energy includes the relative permittivity $\epsilon_r$ accounted for in each volume, while magnetic stored energy includes the relative permeability $\mu_r$. In this formulation we assume to be ``on magnetic resonance'' and, therefore, are not measuring the change in the relative permeability. Consequently, only the free-space permeability $\mu_0$ is needed. Therefore the magnetic stored energy is
 \begin{equation}
     U_m = \frac{\mu_0}{2} \int \mathbf{H}_1\cdot\mathbf{H}_1^* dV \qquad [\text{W}],
 \end{equation}
@@ -256,7 +256,7 @@ A linearly polarized wave can be decomposed into two in-phase circular component
 \begin{equation}
     \mathbf{B}_{1\pm} =  \mathbf{B_1}\cdot\frac{\mathbf{\hat{y}} \pm i\mathbf{\hat{z}}}{\sqrt{2}} \qquad \text{[T]}, \label{circpoleHpm}
 \end{equation}
-where the static magnetic field B$_0$ is in the $\mathbf{\hat{x}}$ direction. In cavity resonators, where the microwave magnetic field is well defined, the left- and right-handed components are equal. However, open structures and systems with multiple wavelengths within the sample could exhibit elliptical polarization. This results in different magnitudes and field profiles for the two components. The component of the magnetic flux density that interacts with the sample during resonance is the amplitude of Eqn.~\ref{circpoleHpm}, therefore, the magnitude of the microwave magnetic flux density in the (right-handed) rotating frame is the amplitude of Re($\mathbf{B}_{1+}\epsilon_+e^{-iwt}$) such that
+where the static magnetic field B$_0$ is in the $\mathbf{\hat{x}}$ direction. In cavity resonators the left- and right-handed components are equal. However, open structures, systems with complex dielectric properties, and multiple wavelengths within the sample could exhibit elliptical polarization. This results in different magnitudes and field profiles for the two components. The component of the magnetic flux density that interacts with the sample during resonance is the amplitude of Eqn.~\ref{circpoleHpm}, therefore, the magnitude of the microwave magnetic flux density in the (right-handed) rotating frame is the amplitude of Re($\mathbf{B}_{1+}\epsilon_+e^{-iwt}$) such that
 \begin{equation}
     \mathbf{B}_{1r} =  \frac{|\mathbf{B}_{1+}|}{\sqrt{2}} \qquad \text{[T]}. \label{circpoleH}
 \end{equation}
@@ -310,7 +310,7 @@ Finally, the $\Lambda_{ave}$-to-$\Lambda_{max}$ ratio can be used as a metric to
 The EPR experiments performed in this work are as follows:
 
 \subsubsection*{Continuous-wave EPR.}
-The continuous-wave (CW) EPR experiment measures the sample using a constant microwave B$_1$ at a fixed frequency ($\omega$) incident on the sample and slowly sweeping B$_0$. As the resonance condition is met, when the incident energy ($E =\hbar \omega$) is equal to the Zeeman splitting, the angular momentum is perturbed and an absorption of the energy is recorded.\footnote{In order to relate this to a real spectrum, we say this happens ``in the neighborhood'' of resonance $\omega_0$ and assume the linewidth is caused by a general broadening from the spin-lattice relaxation time. This assumes homogeneous broadening, as opposed to inhomogeneous broadening. For example, broadening from hyperfine interactions, environmental deviations, etc.}   
+The continuous-wave (CW) EPR experiment measures the sample using a constant microwave B$_1$ at a fixed frequency ($\omega$) incident on the sample and slowly sweeping B$_0$. As the resonance condition is met, when the incident energy ($E =\hbar \omega$) is equal to the Zeeman splitting, the angular momentum is perturbed and an absorption of the energy is recorded.\footnote{In order to relate this to a real spectrum, we say this happens ``in the neighborhood'' of resonance $\omega_0$ and assume the linewidth is caused by a general broadening from the spin-spin relaxation time. This assumes homogeneous broadening, as opposed to inhomogeneous broadening. For example, broadening from hyperfine interactions, environmental deviations, etc.}   
 
 At the macro-scale view, the absorption of the microwaves cause a change in the permeability of the sample through a perturbation of the magnetic susceptibility M,
 \begin{equation}
@@ -318,9 +318,9 @@ At the macro-scale view, the absorption of the microwaves cause a change in the 
 \end{equation} 
 where $\eta$ is the filling factor from Eqn.~\ref{eq-2:filling} which describes the flux-linkage efficiency between the applied microwave magnetic field and the sample and $\chi(\omega)$ is the complex time-dependant magnetic susceptibility.\cite{schumacher1970introduction} For a simple Lorenzian-shaped spectrum, the magnetic susceptibility is 
 \begin{equation}
-      \chi(\omega) = \frac{(\omega_0 - \omega) T_1 }{1+(\omega_0 - \omega)T_2^2+\gamma^2 H_{1r} T_1 T_2}- i \frac{1}{1+(\omega_0 - \omega)T_2^2+\gamma^2 H_{1r} T_1 T_2}, \label{eq-2:chi}
+      \chi(\omega) = \frac{(\omega_0 - \omega) T_1 }{1+(\omega_0 - \omega)^2T_2^2+\gamma^2 B_{1r} T_1 T_2}- i \frac{1}{1+(\omega_0 - \omega)^2T_2^2+\gamma^2 B_{1r} T_1 T_2}, \label{eq-2:chi}
 \end{equation}
-where $T_1$ and $T_2$ are the spin-spin and spin-lattice relaxation times, respectively, $\omega_0$ is the frequency of resonance as $\omega$ is swept, $H_{1r}$ is the microwave magnetic field perpendicular to $\vectu{B}{0}$ (Eqn.~\ref{circpoleH} and $\gamma$ is an isotropic gyromagnetic ratio. \cite{abragam1961}
+where $T_1$ and $T_2$ are the spin-spin and spin-lattice relaxation times, respectively, $\omega_0$ is the frequency of resonance as $\omega$ is swept, $B_{1r}$ is the microwave magnetic field perpendicular to $\vectu{B}{0}$ (Eqn.~\ref{circpoleH} and $\gamma$ is an isotropic gyromagnetic ratio. \cite{abragam1961}
 
 Assuming a simple lumped-circuit resonance consisting of an inductor $L_R$ (which contains the sample) in series with a resistor $R_R$ in parallel with a capacitance $C_R$. The capacitor is chosen so the tank circuit resonates at the frequency $\omega_R^2 L_R C_R = 1$. The detector is placed across the capacitor, measuring the voltage. 
 
@@ -332,14 +332,14 @@ where the permeability of the sample consists of the freespace $\mu_0$ and $4\pi
 \begin{equation}
     R_R + i \omega L_R = (R_R + 4\pi \omega L_0 \eta \chi'') + i (1+4\pi\eta\chi')\omega L_0
 \end{equation}
-where $\omega$ is the frequency of operation and resonance occurs in the neighborhood of $(\omega_0-\omega)$. \cite{schumacher1970introduction} The change in magnetic permeability within a resonator is small compared to the microwave inductance and causes only a perturbation in the operating frequency (dispersion; $\chi'$) and losses (absorption; $\chi''$). The resonator impedance is matched to the bridge, called ``critical coupling'', where the interference of the incoming standing-wave voltage cancels the outgoing reflections. At critical coupling, no voltage is detected at the diode. However, in the neighborhood of resonance, the change in the tank-circuit resistance is directly measured as a change in the reflection coefficient. 
+where $\omega$ is the frequency of operation and resonance occurs in the neighborhood of $(\omega_0-\omega)^2$. \cite{schumacher1970introduction} The change in magnetic permeability within a resonator is small compared to the microwave inductance and causes only a perturbation in the operating frequency (dispersion; $\chi'$) and losses (absorption; $\chi''$). The resonator impedance is matched to the bridge, called ``critical coupling'', where the interference of the incoming standing-wave voltage cancels the outgoing reflections. At critical coupling, no voltage is detected at the diode. However, in the neighborhood of resonance, the change in the tank-circuit resistance is directly measured as a change in the reflection coefficient. 
 
 In the CW experiment, the static magnetic field is modulated by $B_0 + B_m \text{Cos}[2\pi f_m t]$, typically at a modulation frequency $f_m$ of 100~kHz, and is collected using a phase-sensitive detector. \cite{weil2007electron} If the modulation is small, the signal is derivative-like. \cite{Hyde1990pseudo} As the modulation amplitude $B_m$ is increased, the signal increases proportionally until the modulation amplitude approaches the intrinsic line-width of the sample where a broadening occurs. Choosing between signal and signal purity is known as the line-height--line-width compromise and is discussed in Ref.~[2.\kern-0.4em\citenum{eaton2010quantitative}]. 
 
 The modulated reflection coefficient changes are recorded on a detector diode connected to the phase-sensitive detector. When the frequency is held constant, as is typically done with automatic frequency control (AFC), an absorption spectrum is obtained. \cite{poole1967electron} A dispersion signal can be obtained by the frequency control feedback voltage or directly detected by a quadrature microwave channel. Continuous-wave is the standard EPR experiment. 
 
 \subsubsection*{Non-adiabatic and Adiabatic Rapid Scan.}
-With modern digital signal processing and fast analog-to-digital converters, the CW experiment has recently been improved upon. The non-adiabatic rapid scan (NARS) \cite{KITTELL2011228, KITTELL201251, KITTELL201568, Hyde2013MDIFF, YU201558} and adiabatic rapid scan (RS) \cite{JOSHI200544,TSEITLIN200948, MITCHELL2012221, RScompare,MOSER2017} methods collect real and imaginary EPR spectra (pure-absorption and pure-dispersion) using magnetic field ($\mathbf{B}_0 + \mathbf{B}_m $) or microwave frequency sweeps without the need for a phase-sensitive detector. Both rapid scan methods produce data that can be post-processed with pseudo-modulation to compare to the conventional first-derivative EPR spectrum using a moving difference (MDIFF) pseudo-modulation. \cite{Hyde2013MDIFF} The non-adiabatic rapid scan (NARS) experiment uses a static field sweep fast enough to overcome $1/f$ noise but remains in thermal equilibrium, while adiabatic rapid scan sweeps the static field fast enough to cause passage. \cite{Weger1960} 
+With modern digital signal processing and fast analog-to-digital converters, the CW experiment has recently been improved upon. The non-adiabatic rapid scan (NARS) \cite{KITTELL2011228, KITTELL201251, KITTELL201568, Hyde2013MDIFF, YU201558} and adiabatic rapid scan (RS) \cite{JOSHI200544,TSEITLIN200948, MITCHELL2012221, RScompare,MOSER2017} methods collect real and imaginary EPR spectra (pure-absorption and pure-dispersion) using magnetic field ($\mathbf{B}_0 + \mathbf{B}_m $) or microwave frequency sweeps without the need for a phase-sensitive detector. Both rapid scan methods produce data that can be post-processed with pseudo-modulation to compare to the conventional first-derivative EPR spectrum using a moving difference (MDIFF) pseudo-modulation. \cite{Hyde2013MDIFF} The non-adiabatic rapid scan (NARS) experiment uses a static field sweep fast enough to overcome $1/f$ noise but remains in thermal equilibrium (slow passage), while adiabatic rapid scan sweeps the static field fast enough that the spin system does not return to thermal equilibrium before it is excited again (rapid passage). \cite{Weger1960} 
 
 Specifically, the rapid passage regime satisfies the equation
 \begin{equation}
@@ -349,11 +349,11 @@ where the magnitude of the magnitude microwave magnetic field $\mathbf{B}_{1r}$,
 \begin{equation}
     \gamma |\mathbf{B}_{1r}|^2 \gg \frac{d B_0}{dt},
 \end{equation}
-where $\gamma$ is the the gyromagnetic ratio in MHz/G. Conversely, the non-adiabatic regime is defined as
+where $\gamma$ is the the gyromagnetic ratio in MHz/mT. Conversely, the non-adiabatic regime is defined as
 \begin{equation}
     \gamma |\mathbf{B}_{1r}|^2 \ll \frac{d B_0}{dt}.
 \end{equation}
-These conditions produce passage. \cite{Weger1960}
+These conditions are defined in Weger's work on passage effects and define the shape of the EPR signal. \cite{Weger1960}
 
 The advantage of the non-adiabatic rapid scan experiment is the signal-to-noise improvement of collecting pure-absorption EPR spectra, while adiabatic rapid scan can further improve the continuous-wave and NARS experiment by changing the effective microwave magnetic field at the sample. This allows for an increase of microwave power, and thus, an increase in EPR signal for saturable signals. \cite{JOSHI200544} It should be noted that the excitation of a spin packet goes through a continuum of passage from the steady-state CW experiment to the non-adiabatic rapid scan to adiabatic rapid scan, and finally to the free-induction decay pulse. 
 
